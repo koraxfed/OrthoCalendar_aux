@@ -4,4 +4,4 @@
 # Then replace the entire line below with:
 # google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
 
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-8118916113910349, DIRECT, f08c47fec0942fa0
