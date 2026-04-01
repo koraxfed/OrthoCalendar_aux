@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrthoCalendar — Terms of Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#1a1f3a; --gold:#c9a84c; --gold-lt:#e8c96a;
+      --ivory:#f8f4e8; --ivory2:#ede8d5; --red:#8b2635;
+      --text:#2d2a22; --bg:#faf7f0;
+    }
+    body { background:var(--bg); color:var(--text); font-family:'Crimson Text',Georgia,serif; font-size:18px; line-height:1.75; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 2.5rem; background:var(--navy); border-bottom:2px solid var(--gold); position:sticky; top:0; z-index:100; }
+    .nav-brand { font-family:'Cinzel',serif; font-size:1rem; font-weight:700; color:var(--gold); letter-spacing:0.08em; text-decoration:none; }
+    .nav-links { display:flex; gap:1.5rem; list-style:none; }
+    .nav-links a { font-family:'Cinzel',serif; font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(248,244,232,0.65); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-links a.active { color:var(--gold-lt); }
+    .page-header { background:var(--navy); padding:3rem 2rem 3.5rem; text-align:center; position:relative; overflow:hidden; }
+    .page-header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold-lt) 50%,var(--gold) 70%,transparent); }
+    .page-header-ornament { font-size:1.2rem; color:var(--gold); opacity:0.5; letter-spacing:0.8em; display:block; margin-bottom:1rem; }
+    .page-header h1 { font-family:'Cinzel',serif; font-size:clamp(1.6rem,4vw,2.6rem); font-weight:700; color:var(--ivory); letter-spacing:0.04em; }
+    .page-header .updated { margin-top:0.6rem; font-style:italic; font-size:0.95rem; color:rgba(248,244,232,0.45); }
+    .lang-toggle { display:inline-flex; gap:0.5rem; margin-top:1.2rem; }
+    .lang-toggle a { font-family:'Cinzel',serif; font-size:0.65rem; font-weight:600; letter-spacing:0.1em; padding:0.3rem 0.8rem; border:1px solid rgba(201,168,76,0.4); color:rgba(248,244,232,0.6); text-decoration:none; border-radius:2px; transition:all 0.2s; }
+    .lang-toggle a.active { background:rgba(201,168,76,0.2); color:var(--gold-lt); border-color:var(--gold); }
+    .lang-toggle a:hover { color:var(--gold); border-color:var(--gold); }
+    .content { max-width:780px; margin:0 auto; padding:3.5rem 2rem 6rem; }
+    .content h2 { font-family:'Cinzel',serif; font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--navy); margin-top:3rem; margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:1px solid rgba(201,168,76,0.35); display:flex; align-items:center; gap:0.7rem; }
+    .content h2::before { content:'☩'; color:var(--gold); font-size:0.85rem; opacity:0.7; }
+    .content h3 { font-family:'Cinzel',serif; font-size:0.8rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:var(--red); margin-top:2rem; margin-bottom:0.6rem; }
+    .content p { margin-bottom:1.1rem; color:#3a3630; }
+    .content ul { list-style:none; margin:0.5rem 0 1.1rem; padding:0; }
+    .content ul li { padding:0.3rem 0 0.3rem 1.6rem; position:relative; color:#3a3630; }
+    .content ul li::before { content:'✦'; position:absolute; left:0; color:var(--gold); font-size:0.6rem; top:0.55rem; }
+    .content a { color:var(--red); text-decoration:underline; text-underline-offset:2px; }
+    .intro-box { background:var(--ivory2); border-left:3px solid var(--gold); padding:1.2rem 1.6rem; margin-bottom:2rem; font-style:italic; color:#4a4540; font-size:1rem; }
+    .caps-warning { font-size:0.9rem; line-height:1.65; background:rgba(139,38,53,0.05); border:1px solid rgba(139,38,53,0.2); padding:1rem 1.4rem; color:#5a2020; margin-bottom:1rem; }
+    footer { text-align:center; padding:2.5rem 2rem; background:var(--navy); font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.1em; color:rgba(248,244,232,0.3); border-top:2px solid rgba(201,168,76,0.25); }
+    footer a { color:rgba(201,168,76,0.5); text-decoration:none; }
+    footer p + p { margin-top:0.5rem; }
+    @media(max-width:600px){ nav{padding:1rem 1.2rem;} .nav-links{gap:0.8rem;} .content{padding:2rem 1.2rem 4rem;} .page-header{padding:2rem 1.2rem 2.5rem;} }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">✦ OrthoCalendar</a>
+    <ul class="nav-links">
+      <li><a href="privacy-policy.html">Privacy</a></li>
+      <li><a href="terms.html" class="active">Terms</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <span class="page-header-ornament">☩ ✦ ☩</span>
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: March 17, 2026</p>
+    <div class="lang-toggle">
+      <a href="terms.html" class="active">English</a>
+      <a href="terms-el.html">Ελληνικά</a>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <div class="intro-box">
+      Please read these Terms of Service carefully before using OrthoCalendar. By using the App, you agree to be bound by these Terms.
+    </div>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By downloading, installing, or using OrthoCalendar ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+    <p>These Terms constitute a legal agreement between you and KoraxFed ("we," "us," or "our"), the developer of OrthoCalendar.</p>
+
+    <h2>2. Description of Service</h2>
+    <p>OrthoCalendar is a Greek Orthodox liturgical calendar application that provides:</p>
+    <ul>
+      <li>Daily saint commemorations and feast day information</li>
+      <li>Liturgical calendar for both the Revised Julian and Old Julian calendar systems</li>
+      <li>Fasting day guidance</li>
+      <li>Name day tracking and celebrations for contacts</li>
+      <li>AI-powered spiritual reflections and information (Premium feature)</li>
+      <li>Subscription-based premium features</li>
+    </ul>
+
+    <h2>3. User Accounts</h2>
+    <h3>3.1 Registration</h3>
+    <p>To access certain features, you must create an account by providing an email address and password. You are responsible for maintaining the confidentiality of your account credentials.</p>
+    <h3>3.2 Accuracy of Information</h3>
+    <p>You agree to provide accurate, current, and complete information when creating your account, and to keep it up to date.</p>
+    <h3>3.3 Account Security</h3>
+    <p>You are solely responsible for all activity that occurs under your account. Notify us immediately at <a href="mailto:orthocalendar.app@gmail.com">orthocalendar.app@gmail.com</a> if you suspect unauthorized use of your account.</p>
+    <h3>3.4 Account Deletion</h3>
+    <p>You may request deletion of your account and associated data at any time by contacting us at <a href="mailto:orthocalendar.app@gmail.com">orthocalendar.app@gmail.com</a>. We will process deletion requests within 30 days.</p>
+
+    <h2>4. Subscriptions and Payments</h2>
+    <h3>4.1 Free Tier</h3>
+    <p>OrthoCalendar is available for free with limited features. Free users may see advertisements served by Google AdMob.</p>
+    <h3>4.2 Premium Subscriptions</h3>
+    <p>Premium subscriptions ("OrthoCalendar Premium") are available on a monthly or annual basis and unlock additional features including the AI chat assistant and an ad-free experience.</p>
+    <h3>4.3 Billing</h3>
+    <p>Subscriptions are billed through the Google Play Store or Apple App Store. Prices are displayed at the time of purchase and may vary by region. Applicable taxes may apply.</p>
+    <h3>4.4 Renewal</h3>
+    <p>Subscriptions renew automatically at the end of each billing period unless cancelled at least 24 hours before the renewal date. You can manage or cancel your subscription at any time through your Google Play or Apple App Store account settings.</p>
+    <h3>4.5 Refunds</h3>
+    <p>Refund requests are handled by Google Play or Apple App Store according to their respective refund policies. We do not process refunds directly.</p>
+    <h3>4.6 Free Trials</h3>
+    <p>Where offered, free trials convert automatically to paid subscriptions at the end of the trial period unless cancelled beforehand.</p>
+
+    <h2>5. Acceptable Use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use the App for any unlawful purpose or in violation of any applicable laws</li>
+      <li>Attempt to reverse-engineer, decompile, or extract the source code of the App</li>
+      <li>Use automated tools to access or scrape the App or its content</li>
+      <li>Attempt to gain unauthorized access to any part of the App or its backend systems</li>
+      <li>Reproduce, distribute, or commercially exploit App content without our written permission</li>
+      <li>Use the AI chat feature to generate content that is harmful, offensive, or contrary to the spirit of the App's religious purpose</li>
+    </ul>
+
+    <h2>6. Content and Intellectual Property</h2>
+    <h3>6.1 App Content</h3>
+    <p>All content provided in the App — including saint biographies, liturgical information, reflections, and AI-generated text — is provided for informational and spiritual purposes only. While we strive for accuracy, we do not guarantee the completeness or theological correctness of any content.</p>
+    <h3>6.2 Ownership</h3>
+    <p>OrthoCalendar and all its content, features, and functionality are owned by KoraxFed and are protected by copyright and other intellectual property laws.</p>
+    <h3>6.3 User Content</h3>
+    <p>If you interact with the AI chat feature, your messages are processed to generate responses but are not stored permanently or used to train AI models.</p>
+
+    <h2>7. AI Chat Feature (Premium)</h2>
+    <p>The AI chat feature is powered by Google Gemini and is intended to provide general spiritual information and liturgical context. It is not a substitute for guidance from a priest, spiritual father, or other qualified religious authority. Responses are AI-generated and may contain inaccuracies. Always consult appropriate religious authorities for matters of faith and practice.</p>
+    <p>Usage of the AI chat feature is limited to 20 messages per day for Premium users.</p>
+
+    <h2>8. Advertisements</h2>
+    <p>Free users may see advertisements provided by Google AdMob. Advertisements are governed by Google's advertising policies. We do not control the content of advertisements and are not responsible for advertiser content.</p>
+
+    <h2>9. Third-Party Services</h2>
+    <p>The App integrates with the following third-party services, each governed by their own terms and privacy policies:</p>
+    <ul>
+      <li>Google (AdMob, Gemini AI) — <a href="https://policies.google.com" target="_blank" rel="noopener">policies.google.com</a></li>
+      <li>Supabase — <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></li>
+      <li>RevenueCat — <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></li>
+      <li>Google Play Store / Apple App Store — for subscription billing</li>
+    </ul>
+    <p>We are not responsible for the practices of these third-party services.</p>
+
+    <h2>10. Disclaimers</h2>
+    <div class="caps-warning">
+      THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
+    </div>
+    <p>Liturgical calendar data, fasting guidelines, and saint information are provided as a general reference. Calendar systems and liturgical practices may vary between jurisdictions and parishes. Always defer to your local church and spiritual authorities.</p>
+
+    <h2>11. Limitation of Liability</h2>
+    <div class="caps-warning">
+      TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, KORAXFED SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APP, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+    </div>
+    <p>Our total liability to you for any claims arising from these Terms or your use of the App shall not exceed the amount you paid us in the 12 months preceding the claim.</p>
+
+    <h2>12. Changes to the App</h2>
+    <p>We reserve the right to modify, suspend, or discontinue any part of the App at any time, with or without notice. We are not liable to you or any third party for any modification, suspension, or discontinuation of the App.</p>
+
+    <h2>13. Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of the App after changes are posted constitutes your acceptance of the revised Terms. We encourage you to review these Terms periodically.</p>
+
+    <h2>14. Governing Law</h2>
+    <p>These Terms are governed by the laws of the Republic of Cyprus, without regard to conflict of law principles. Any disputes arising from these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts of Cyprus.</p>
+
+    <h2>15. Contact Us</h2>
+    <p>If you have any questions about these Terms of Service, please contact us:</p>
+    <p><strong>Email:</strong> <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a></p>
+    <p><strong>Privacy Policy:</strong> <a href="privacy-policy.html">View Privacy Policy</a></p>
+    <p style="margin-top:2rem; font-style:italic; color:#6b6456; font-size:0.95rem;">OrthoCalendar — Bringing the Orthodox calendar to life.</p>
+
+  </main>
+
+  <footer>
+    <p>© 2026 KoraxFed · <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a></p>
+    <p><a href="index.html">Home</a> · <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
+  </footer>
+
+</body>
+</html>

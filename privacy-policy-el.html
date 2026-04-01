@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrthoCalendar — Πολιτική Απορρήτου</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#1a1f3a; --gold:#c9a84c; --gold-lt:#e8c96a;
+      --ivory:#f8f4e8; --ivory2:#ede8d5; --red:#8b2635;
+      --text:#2d2a22; --bg:#faf7f0;
+    }
+    body { background:var(--bg); color:var(--text); font-family:'Crimson Text',Georgia,serif; font-size:18px; line-height:1.75; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 2.5rem; background:var(--navy); border-bottom:2px solid var(--gold); position:sticky; top:0; z-index:100; }
+    .nav-brand { font-family:'Cinzel',serif; font-size:1rem; font-weight:700; color:var(--gold); letter-spacing:0.08em; text-decoration:none; }
+    .nav-links { display:flex; gap:1.5rem; list-style:none; }
+    .nav-links a { font-family:'Cinzel',serif; font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(248,244,232,0.65); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-links a.active { color:var(--gold-lt); }
+    .page-header { background:var(--navy); padding:3rem 2rem 3.5rem; text-align:center; position:relative; overflow:hidden; }
+    .page-header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold-lt) 50%,var(--gold) 70%,transparent); }
+    .page-header-ornament { font-size:1.2rem; color:var(--gold); opacity:0.5; letter-spacing:0.8em; display:block; margin-bottom:1rem; }
+    .page-header h1 { font-family:'Cinzel',serif; font-size:clamp(1.6rem,4vw,2.6rem); font-weight:700; color:var(--ivory); letter-spacing:0.04em; }
+    .page-header .updated { margin-top:0.6rem; font-style:italic; font-size:0.95rem; color:rgba(248,244,232,0.45); }
+    .lang-toggle { display:inline-flex; gap:0.5rem; margin-top:1.2rem; }
+    .lang-toggle a { font-family:'Cinzel',serif; font-size:0.65rem; font-weight:600; letter-spacing:0.1em; padding:0.3rem 0.8rem; border:1px solid rgba(201,168,76,0.4); color:rgba(248,244,232,0.6); text-decoration:none; border-radius:2px; transition:all 0.2s; }
+    .lang-toggle a.active { background:rgba(201,168,76,0.2); color:var(--gold-lt); border-color:var(--gold); }
+    .lang-toggle a:hover { color:var(--gold); border-color:var(--gold); }
+    .content { max-width:780px; margin:0 auto; padding:3.5rem 2rem 6rem; }
+    .content h2 { font-family:'Cinzel',serif; font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--navy); margin-top:3rem; margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:1px solid rgba(201,168,76,0.35); display:flex; align-items:center; gap:0.7rem; }
+    .content h2::before { content:'☩'; color:var(--gold); font-size:0.85rem; opacity:0.7; }
+    .content h3 { font-family:'Cinzel',serif; font-size:0.8rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:var(--red); margin-top:2rem; margin-bottom:0.6rem; }
+    .content p { margin-bottom:1.1rem; color:#3a3630; }
+    .content ul { list-style:none; margin:0.5rem 0 1.1rem; padding:0; }
+    .content ul li { padding:0.3rem 0 0.3rem 1.6rem; position:relative; color:#3a3630; }
+    .content ul li::before { content:'✦'; position:absolute; left:0; color:var(--gold); font-size:0.6rem; top:0.55rem; }
+    .content a { color:var(--red); text-decoration:underline; text-underline-offset:2px; }
+    .intro-box { background:var(--ivory2); border-left:3px solid var(--gold); padding:1.2rem 1.6rem; margin-bottom:2rem; font-style:italic; color:#4a4540; font-size:1rem; }
+    footer { text-align:center; padding:2.5rem 2rem; background:var(--navy); font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.1em; color:rgba(248,244,232,0.3); border-top:2px solid rgba(201,168,76,0.25); }
+    footer a { color:rgba(201,168,76,0.5); text-decoration:none; }
+    footer p + p { margin-top:0.5rem; }
+    @media(max-width:600px){ nav{padding:1rem 1.2rem;} .nav-links{gap:0.8rem;} .content{padding:2rem 1.2rem 4rem;} .page-header{padding:2rem 1.2rem 2.5rem;} }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">✦ OrthoCalendar</a>
+    <ul class="nav-links">
+      <li><a href="privacy-policy-el.html" class="active">Απόρρητο</a></li>
+      <li><a href="terms-el.html">Όροι</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <span class="page-header-ornament">☩ ✦ ☩</span>
+    <h1>Πολιτική Απορρήτου</h1>
+    <p class="updated">Τελευταία ενημέρωση: 14 Μαρτίου 2026</p>
+    <div class="lang-toggle">
+      <a href="privacy-policy.html">English</a>
+      <a href="privacy-policy-el.html" class="active">Ελληνικά</a>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <div class="intro-box">
+      Η παρούσα Πολιτική Απορρήτου περιγράφει τον τρόπο με τον οποίο το OrthoCalendar ("εμείς") συλλέγει, χρησιμοποιεί και κοινοποιεί πληροφορίες σχετικά με εσάς κατά τη χρήση της εφαρμογής μας OrthoCalendar (η "Εφαρμογή").
+    </div>
+
+    <h2>1. Πληροφορίες που Συλλέγουμε</h2>
+
+    <h3>Πληροφορίες που μας παρέχετε</h3>
+    <ul>
+      <li><strong>Στοιχεία λογαριασμού:</strong> Κατά τη δημιουργία λογαριασμού, συλλέγουμε τη διεύθυνση email και τον κωδικό πρόσβασής σας.</li>
+      <li><strong>Στοιχεία επαφών:</strong> Εάν χρησιμοποιείτε τη λειτουργία Άνθρωποι, αποθηκεύουμε τα ονόματα, τα γενέθλια και τις ονομαστικές εορτές των επαφών που εισάγετε χειροκίνητα στην Εφαρμογή. Αυτές οι πληροφορίες αποθηκεύονται με ασφάλεια στη βάση δεδομένων μας.</li>
+    </ul>
+
+    <h3>Πληροφορίες που συλλέγονται αυτόματα</h3>
+    <ul>
+      <li><strong>Δεδομένα χρήσης:</strong> Ενδέχεται να συλλέγουμε πληροφορίες σχετικά με τον τρόπο χρήσης της Εφαρμογής, όπως τις λειτουργίες που χρησιμοποιείτε και τον χρόνο που αφιερώνετε στην Εφαρμογή.</li>
+      <li><strong>Πληροφορίες συσκευής:</strong> Ενδέχεται να συλλέγουμε πληροφορίες για τη συσκευή σας, συμπεριλαμβανομένου του τύπου συσκευής και της έκδοσης λειτουργικού συστήματος.</li>
+    </ul>
+
+    <h3>Διαφήμιση</h3>
+    <p>Η δωρεάν έκδοση της Εφαρμογής ενδέχεται να εμφανίζει διαφημίσεις που εξυπηρετούνται από το Google AdMob. Το AdMob ενδέχεται να συλλέγει και να χρησιμοποιεί δεδομένα όπως περιγράφεται στην Πολιτική Απορρήτου της Google, συμπεριλαμβανομένης της χρήσης του Advertising ID της συσκευής σας.</p>
+
+    <h2>2. Πώς Χρησιμοποιούμε τις Πληροφορίες σας</h2>
+    <p>Χρησιμοποιούμε τις πληροφορίες που συλλέγουμε για να:</p>
+    <ul>
+      <li>Παρέχουμε, διατηρούμε και βελτιώνουμε την Εφαρμογή</li>
+      <li>Δημιουργούμε και διαχειριζόμαστε τον λογαριασμό σας</li>
+      <li>Εξατομικεύουμε την εμπειρία σας (π.χ. προτίμηση γλώσσας, τύπος ημερολογίου)</li>
+      <li>Σας στέλνουμε σχετικές ειδοποιήσεις για επερχόμενες ονομαστικές εορτές και γενέθλια επαφών που έχετε προσθέσει</li>
+      <li>Εμφανίζουμε σχετικές διαφημίσεις στους δωρεάν χρήστες</li>
+    </ul>
+
+    <h2>3. Πώς Κοινοποιούμε τις Πληροφορίες σας</h2>
+    <p>Δεν πωλούμε τα προσωπικά σας δεδομένα. Ενδέχεται να κοινοποιήσουμε τις πληροφορίες σας με:</p>
+    <ul>
+      <li><strong>Supabase:</strong> Ο πάροχος βάσης δεδομένων και ταυτοποίησης. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Πολιτική Απορρήτου Supabase</a></li>
+      <li><strong>Google AdMob:</strong> Ο διαφημιστικός μας εταίρος για δωρεάν χρήστες. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Πολιτική Απορρήτου Google</a></li>
+      <li><strong>Google Gemini AI:</strong> Η λειτουργία AI βοηθού χρησιμοποιεί το Gemini API της Google. Τα ερωτήματα που αποστέλλονται στον AI βοηθό ενδέχεται να υποβάλλονται σε επεξεργασία από την Google. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Πολιτική Απορρήτου Google</a></li>
+    </ul>
+    <p>Ενδέχεται επίσης να κοινοποιήσουμε τις πληροφορίες σας εάν απαιτείται από το νόμο ή για την προστασία των δικαιωμάτων μας.</p>
+
+    <h2>4. Αποθήκευση και Ασφάλεια Δεδομένων</h2>
+    <p>Τα δεδομένα σας αποθηκεύονται με ασφάλεια χρησιμοποιώντας το Supabase, το οποίο χρησιμοποιεί κρυπτογράφηση βιομηχανικού επιπέδου. Λαμβάνουμε εύλογα μέτρα για να προστατεύσουμε τις πληροφορίες σας από μη εξουσιοδοτημένη πρόσβαση, χρήση ή αποκάλυψη. Ωστόσο, καμία μέθοδος μετάδοσης μέσω διαδικτύου δεν είναι 100% ασφαλής.</p>
+
+    <h2>5. Διατήρηση Δεδομένων &amp; Διαγραφή Λογαριασμού</h2>
+    <p>Διατηρούμε τα προσωπικά σας δεδομένα μόνο για όσο διάστημα ο λογαριασμός σας είναι ενεργός ή για όσο διάστημα απαιτείται για την παροχή των υπηρεσιών μας.</p>
+    <ul>
+      <li><strong>Διαγραφή μέσω της Εφαρμογής:</strong> Μπορείτε να διαγράψετε τον λογαριασμό σας και όλα τα σχετικά δεδομένα ανά πάσα στιγμή απευθείας μέσα από την εφαρμογή. Μεταβείτε στο <em>Προφίλ → Διαγραφή Λογαριασμού</em>.</li>
+      <li><strong>Μη αυτόματο αίτημα:</strong> Εάν έχετε ήδη απεγκαταστήσει την εφαρμογή ή δεν έχετε πρόσβαση στον λογαριασμό σας, μπορείτε να ζητήσετε τη διαγραφή στέλνοντάς μας email στο <a href="mailto:koraxfed+ocgeneral@gmail.com">koraxfed+ocgeneral@gmail.com</a>. Μετά την επιβεβαίωση, θα αφαιρέσουμε οριστικά όλα τα προσωπικά δεδομένα, εκτός εάν η διατήρησή τους απαιτείται από το νόμο.</li>
+    </ul>
+
+    <h2>6. Απόρρητο Παιδιών</h2>
+    <p>Το OrthoCalendar δεν απευθύνεται σε παιδιά κάτω των 13 ετών. Δεν συλλέγουμε εν γνώσει μας προσωπικές πληροφορίες από παιδιά κάτω των 13 ετών. Εάν πιστεύετε ότι έχουμε συλλέξει κατά λάθος πληροφορίες από παιδί κάτω των 13 ετών, παρακαλούμε επικοινωνήστε μαζί μας αμέσως.</p>
+
+    <h2>7. Τα Δικαιώματά σας</h2>
+    <p>Ανάλογα με την τοποθεσία σας, ενδέχεται να έχετε το δικαίωμα να:</p>
+    <ul>
+      <li>Αποκτήσετε πρόσβαση στα προσωπικά δεδομένα που διατηρούμε για εσάς</li>
+      <li>Ζητήσετε διόρθωση ανακριβών δεδομένων</li>
+      <li>Ζητήσετε τη διαγραφή των δεδομένων σας</li>
+      <li>Αντιταχθείτε ή περιορίσετε την επεξεργασία των δεδομένων σας</li>
+    </ul>
+    <p>Για να ασκήσετε οποιοδήποτε από αυτά τα δικαιώματα, παρακαλούμε επικοινωνήστε μαζί μας στο παρακάτω email.</p>
+
+    <h2>8. Αλλαγές στην Παρούσα Πολιτική Απορρήτου</h2>
+    <p>Ενδέχεται να ενημερώνουμε την παρούσα Πολιτική Απορρήτου κατά καιρούς. Θα σας ενημερώνουμε για τυχόν σημαντικές αλλαγές ενημερώνοντας την ημερομηνία "Τελευταία ενημέρωση" στην κορυφή αυτής της σελίδας. Η συνέχιση της χρήσης της Εφαρμογής αποτελεί αποδοχή της νέας Πολιτικής Απορρήτου.</p>
+
+    <h2>9. Αποποίηση Ευθύνης</h2>
+    <p>Το OrthoCalendar προορίζεται μόνο για ενημερωτικούς σκοπούς. Παρόλο που καταβάλλουμε κάθε προσπάθεια για ακρίβεια, οι εορτές, οι κανόνες νηστείας και οι πληροφορίες για τους αγίους ενδέχεται να περιέχουν λάθη ή να διαφέρουν ανάλογα με την τοπική παράδοση. Συμβουλευτείτε πάντα τον ιερέα σας ή μια έγκυρη ορθόδοξη πηγή για κανονική καθοδήγηση.</p>
+
+    <h2>10. Επικοινωνήστε μαζί μας</h2>
+    <p>Εάν έχετε οποιεσδήποτε ερωτήσεις σχετικά με την παρούσα Πολιτική Απορρήτου, παρακαλούμε επικοινωνήστε μαζί μας στη διεύθυνση:</p>
+    <p><strong>Email:</strong> <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a></p>
+    <p style="margin-top:2rem; font-style:italic; color:#6b6456; font-size:0.95rem;">Το OrthoCalendar δεν συνδέεται με καμία επίσημη Ορθόδοξη Εκκλησιαστική οργάνωση.</p>
+
+  </main>
+
+  <footer>
+    <p>© 2026 KoraxFed · <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a></p>
+    <p><a href="index.html">Αρχική</a> · <a href="privacy-policy-el.html">Πολιτική Απορρήτου</a> · <a href="terms-el.html">Όροι Χρήσης</a></p>
+  </footer>
+
+</body>
+</html>

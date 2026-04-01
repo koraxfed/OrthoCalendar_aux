@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrthoCalendar — Όροι Χρήσης</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#1a1f3a; --gold:#c9a84c; --gold-lt:#e8c96a;
+      --ivory:#f8f4e8; --ivory2:#ede8d5; --red:#8b2635;
+      --text:#2d2a22; --bg:#faf7f0;
+    }
+    body { background:var(--bg); color:var(--text); font-family:'Crimson Text',Georgia,serif; font-size:18px; line-height:1.75; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 2.5rem; background:var(--navy); border-bottom:2px solid var(--gold); position:sticky; top:0; z-index:100; }
+    .nav-brand { font-family:'Cinzel',serif; font-size:1rem; font-weight:700; color:var(--gold); letter-spacing:0.08em; text-decoration:none; }
+    .nav-links { display:flex; gap:1.5rem; list-style:none; }
+    .nav-links a { font-family:'Cinzel',serif; font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(248,244,232,0.65); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-links a.active { color:var(--gold-lt); }
+    .page-header { background:var(--navy); padding:3rem 2rem 3.5rem; text-align:center; position:relative; overflow:hidden; }
+    .page-header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold-lt) 50%,var(--gold) 70%,transparent); }
+    .page-header-ornament { font-size:1.2rem; color:var(--gold); opacity:0.5; letter-spacing:0.8em; display:block; margin-bottom:1rem; }
+    .page-header h1 { font-family:'Cinzel',serif; font-size:clamp(1.6rem,4vw,2.6rem); font-weight:700; color:var(--ivory); letter-spacing:0.04em; }
+    .page-header .updated { margin-top:0.6rem; font-style:italic; font-size:0.95rem; color:rgba(248,244,232,0.45); }
+    .lang-toggle { display:inline-flex; gap:0.5rem; margin-top:1.2rem; }
+    .lang-toggle a { font-family:'Cinzel',serif; font-size:0.65rem; font-weight:600; letter-spacing:0.1em; padding:0.3rem 0.8rem; border:1px solid rgba(201,168,76,0.4); color:rgba(248,244,232,0.6); text-decoration:none; border-radius:2px; transition:all 0.2s; }
+    .lang-toggle a.active { background:rgba(201,168,76,0.2); color:var(--gold-lt); border-color:var(--gold); }
+    .lang-toggle a:hover { color:var(--gold); border-color:var(--gold); }
+    .content { max-width:780px; margin:0 auto; padding:3.5rem 2rem 6rem; }
+    .content h2 { font-family:'Cinzel',serif; font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--navy); margin-top:3rem; margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:1px solid rgba(201,168,76,0.35); display:flex; align-items:center; gap:0.7rem; }
+    .content h2::before { content:'☩'; color:var(--gold); font-size:0.85rem; opacity:0.7; }
+    .content h3 { font-family:'Cinzel',serif; font-size:0.8rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:var(--red); margin-top:2rem; margin-bottom:0.6rem; }
+    .content p { margin-bottom:1.1rem; color:#3a3630; }
+    .content ul { list-style:none; margin:0.5rem 0 1.1rem; padding:0; }
+    .content ul li { padding:0.3rem 0 0.3rem 1.6rem; position:relative; color:#3a3630; }
+    .content ul li::before { content:'✦'; position:absolute; left:0; color:var(--gold); font-size:0.6rem; top:0.55rem; }
+    .content a { color:var(--red); text-decoration:underline; text-underline-offset:2px; }
+    .intro-box { background:var(--ivory2); border-left:3px solid var(--gold); padding:1.2rem 1.6rem; margin-bottom:2rem; font-style:italic; color:#4a4540; font-size:1rem; }
+    .caps-warning { font-size:0.9rem; line-height:1.65; background:rgba(139,38,53,0.05); border:1px solid rgba(139,38,53,0.2); padding:1rem 1.4rem; color:#5a2020; margin-bottom:1rem; }
+    footer { text-align:center; padding:2.5rem 2rem; background:var(--navy); font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.1em; color:rgba(248,244,232,0.3); border-top:2px solid rgba(201,168,76,0.25); }
+    footer a { color:rgba(201,168,76,0.5); text-decoration:none; }
+    footer p + p { margin-top:0.5rem; }
+    @media(max-width:600px){ nav{padding:1rem 1.2rem;} .nav-links{gap:0.8rem;} .content{padding:2rem 1.2rem 4rem;} .page-header{padding:2rem 1.2rem 2.5rem;} }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">✦ OrthoCalendar</a>
+    <ul class="nav-links">
+      <li><a href="privacy-policy-el.html">Απόρρητο</a></li>
+      <li><a href="terms-el.html" class="active">Όροι</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <span class="page-header-ornament">☩ ✦ ☩</span>
+    <h1>Όροι Χρήσης</h1>
+    <p class="updated">Τελευταία ενημέρωση: 17 Μαρτίου 2026</p>
+    <div class="lang-toggle">
+      <a href="terms.html">English</a>
+      <a href="terms-el.html" class="active">Ελληνικά</a>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <div class="intro-box">
+      Παρακαλούμε διαβάστε προσεκτικά τους παρόντες Όρους Χρήσης πριν χρησιμοποιήσετε το OrthoCalendar. Με τη χρήση της Εφαρμογής, συμφωνείτε να δεσμεύεστε από τους παρόντες Όρους.
+    </div>
+
+    <h2>1. Αποδοχή Όρων</h2>
+    <p>Με τη λήψη, εγκατάσταση ή χρήση του OrthoCalendar («η Εφαρμογή»), συμφωνείτε να δεσμεύεστε από τους παρόντες Όρους Χρήσης («Όροι»). Εάν δεν συμφωνείτε με αυτούς τους Όρους, μην χρησιμοποιείτε την Εφαρμογή.</p>
+    <p>Οι παρόντες Όροι αποτελούν νομική συμφωνία μεταξύ υμών και της KoraxFed («εμείς», «εμάς», ή «μας»), του προγραμματιστή του OrthoCalendar.</p>
+
+    <h2>2. Περιγραφή Υπηρεσίας</h2>
+    <p>Το OrthoCalendar είναι μια εφαρμογή ελληνορθόδοξου λειτουργικού ημερολογίου που παρέχει:</p>
+    <ul>
+      <li>Ημερήσιες αγιολογικές αναμνήσεις και πληροφορίες για τις εορτές</li>
+      <li>Λειτουργικό ημερολόγιο για το Νεοϊουλιανό και το Παλαιοημερολογιτικό σύστημα</li>
+      <li>Οδηγίες νηστείας</li>
+      <li>Παρακολούθηση ονομαστικών εορτών επαφών</li>
+      <li>Πνευματικές αναλύσεις και πληροφορίες με τεχνητή νοημοσύνη (Λειτουργία Premium)</li>
+      <li>Λειτουργίες premium βάσει συνδρομής</li>
+    </ul>
+
+    <h2>3. Λογαριασμοί Χρηστών</h2>
+    <h3>3.1 Εγγραφή</h3>
+    <p>Για να αποκτήσετε πρόσβαση σε ορισμένες λειτουργίες, πρέπει να δημιουργήσετε λογαριασμό παρέχοντας διεύθυνση email και κωδικό πρόσβασης. Είστε υπεύθυνοι για τη διατήρηση της εμπιστευτικότητας των διαπιστευτηρίων του λογαριασμού σας.</p>
+    <h3>3.2 Ακρίβεια Πληροφοριών</h3>
+    <p>Συμφωνείτε να παρέχετε ακριβείς, τρέχουσες και πλήρεις πληροφορίες κατά τη δημιουργία του λογαριασμού σας και να τις διατηρείτε ενημερωμένες.</p>
+    <h3>3.3 Ασφάλεια Λογαριασμού</h3>
+    <p>Είστε αποκλειστικά υπεύθυνοι για κάθε δραστηριότητα που πραγματοποιείται στον λογαριασμό σας. Ειδοποιήστε μας αμέσως στο <a href="mailto:orthocalendar.app@gmail.com">orthocalendar.app@gmail.com</a> εάν υποψιάζεστε μη εξουσιοδοτημένη χρήση του λογαριασμού σας.</p>
+    <h3>3.4 Διαγραφή Λογαριασμού</h3>
+    <p>Μπορείτε να ζητήσετε τη διαγραφή του λογαριασμού σας και των σχετικών δεδομένων ανά πάσα στιγμή επικοινωνώντας μαζί μας στο <a href="mailto:orthocalendar.app@gmail.com">orthocalendar.app@gmail.com</a>. Θα επεξεργαζόμαστε αιτήματα διαγραφής εντός 30 ημερών.</p>
+
+    <h2>4. Συνδρομές και Πληρωμές</h2>
+    <h3>4.1 Δωρεάν Επίπεδο</h3>
+    <p>Το OrthoCalendar είναι διαθέσιμο δωρεάν με περιορισμένες λειτουργίες. Οι δωρεάν χρήστες ενδέχεται να βλέπουν διαφημίσεις μέσω του Google AdMob.</p>
+    <h3>4.2 Premium Συνδρομές</h3>
+    <p>Οι premium συνδρομές («OrthoCalendar Premium») είναι διαθέσιμες σε μηνιαία ή ετήσια βάση και ξεκλειδώνουν πρόσθετες λειτουργίες, συμπεριλαμβανομένου του βοηθού AI chat και εμπειρίας χωρίς διαφημίσεις.</p>
+    <h3>4.3 Χρέωση</h3>
+    <p>Οι συνδρομές χρεώνονται μέσω του Google Play Store ή του Apple App Store. Οι τιμές εμφανίζονται κατά τη στιγμή της αγοράς και ενδέχεται να διαφέρουν ανά περιοχή. Ενδέχεται να ισχύουν φόροι.</p>
+    <h3>4.4 Ανανέωση</h3>
+    <p>Οι συνδρομές ανανεώνονται αυτόματα στο τέλος κάθε περιόδου χρέωσης, εκτός εάν ακυρωθούν τουλάχιστον 24 ώρες πριν από την ημερομηνία ανανέωσης. Μπορείτε να διαχειριστείτε ή να ακυρώσετε τη συνδρομή σας ανά πάσα στιγμή μέσω των ρυθμίσεων λογαριασμού σας στο Google Play ή στο Apple App Store.</p>
+    <h3>4.5 Επιστροφές Χρημάτων</h3>
+    <p>Τα αιτήματα επιστροφής χρημάτων διεκπεραιώνονται από το Google Play ή το Apple App Store σύμφωνα με τις αντίστοιχες πολιτικές επιστροφής χρημάτων τους. Δεν επεξεργαζόμαστε απευθείας επιστροφές χρημάτων.</p>
+    <h3>4.6 Δωρεάν Δοκιμές</h3>
+    <p>Όπου προσφέρονται, οι δωρεάν δοκιμές μετατρέπονται αυτόματα σε επί πληρωμή συνδρομές στο τέλος της δοκιμαστικής περιόδου, εκτός εάν ακυρωθούν εκ των προτέρων.</p>
+
+    <h2>5. Αποδεκτή Χρήση</h2>
+    <p>Συμφωνείτε να μην:</p>
+    <ul>
+      <li>Χρησιμοποιείτε την Εφαρμογή για παράνομους σκοπούς ή κατά παράβαση ισχυόντων νόμων</li>
+      <li>Επιχειρείτε να αποσυναρμολογήσετε, να απομεταγλωττίσετε ή να εξαγάγετε τον πηγαίο κώδικα της Εφαρμογής</li>
+      <li>Χρησιμοποιείτε αυτοματοποιημένα εργαλεία για πρόσβαση ή εξαγωγή δεδομένων από την Εφαρμογή</li>
+      <li>Επιχειρείτε να αποκτήσετε μη εξουσιοδοτημένη πρόσβαση σε οποιοδήποτε τμήμα της Εφαρμογής ή των συστημάτων backend</li>
+      <li>Αναπαράγετε, διανέμετε ή εκμεταλλεύεστε εμπορικά το περιεχόμενο της Εφαρμογής χωρίς γραπτή μας άδεια</li>
+      <li>Χρησιμοποιείτε τη λειτουργία AI chat για τη δημιουργία περιεχομένου επιβλαβούς, προσβλητικού ή αντίθετου με τον πνευματικό σκοπό της Εφαρμογής</li>
+    </ul>
+
+    <h2>6. Περιεχόμενο και Πνευματική Ιδιοκτησία</h2>
+    <h3>6.1 Περιεχόμενο Εφαρμογής</h3>
+    <p>Όλο το περιεχόμενο της Εφαρμογής — συμπεριλαμβανομένων βιογραφιών αγίων, λειτουργικών πληροφοριών, αναλύσεων και κειμένων παραγόμενων από τεχνητή νοημοσύνη — παρέχεται αποκλειστικά για ενημερωτικούς και πνευματικούς σκοπούς. Αν και επιδιώκουμε την ακρίβεια, δεν εγγυόμαστε την πληρότητα ή θεολογική ορθότητα οποιουδήποτε περιεχομένου.</p>
+    <h3>6.2 Ιδιοκτησία</h3>
+    <p>Το OrthoCalendar και όλο το περιεχόμενο, οι λειτουργίες και η λειτουργικότητά του ανήκουν στην KoraxFed και προστατεύονται από νόμους πνευματικής ιδιοκτησίας.</p>
+    <h3>6.3 Περιεχόμενο Χρήστη</h3>
+    <p>Εάν αλληλεπιδράτε με τη λειτουργία AI chat, τα μηνύματά σας υποβάλλονται σε επεξεργασία για τη δημιουργία απαντήσεων, αλλά δεν αποθηκεύονται μόνιμα ούτε χρησιμοποιούνται για εκπαίδευση μοντέλων AI.</p>
+
+    <h2>7. Λειτουργία AI Chat (Premium)</h2>
+    <p>Η λειτουργία AI chat υποστηρίζεται από το Google Gemini και προορίζεται να παρέχει γενικές πνευματικές πληροφορίες και λειτουργικό πλαίσιο. Δεν αντικαθιστά την καθοδήγηση από ιερέα, πνευματικό πατέρα ή άλλη αρμόδια θρησκευτική αρχή. Οι απαντήσεις παράγονται από τεχνητή νοημοσύνη και ενδέχεται να περιέχουν ανακρίβειες. Να συμβουλεύεστε πάντα κατάλληλες θρησκευτικές αρχές για θέματα πίστεως και πράξεως.</p>
+    <p>Η χρήση της λειτουργίας AI chat περιορίζεται σε 20 μηνύματα ανά ημέρα για τους Premium χρήστες.</p>
+
+    <h2>8. Διαφημίσεις</h2>
+    <p>Οι δωρεάν χρήστες ενδέχεται να βλέπουν διαφημίσεις που παρέχονται από το Google AdMob. Οι διαφημίσεις διέπονται από τις διαφημιστικές πολιτικές της Google. Δεν ελέγχουμε το περιεχόμενο των διαφημίσεων και δεν ευθυνόμαστε για το περιεχόμενο των διαφημιστών.</p>
+
+    <h2>9. Υπηρεσίες Τρίτων</h2>
+    <p>Η Εφαρμογή ενσωματώνει τις ακόλουθες υπηρεσίες τρίτων, καθεμία από τις οποίες διέπεται από τους δικούς της όρους και πολιτικές απορρήτου:</p>
+    <ul>
+      <li>Google (AdMob, Gemini AI) — <a href="https://policies.google.com" target="_blank" rel="noopener">policies.google.com</a></li>
+      <li>Supabase — <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></li>
+      <li>RevenueCat — <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></li>
+      <li>Google Play Store / Apple App Store — για χρέωση συνδρομής</li>
+    </ul>
+    <p>Δεν είμαστε υπεύθυνοι για τις πρακτικές αυτών των υπηρεσιών τρίτων.</p>
+
+    <h2>10. Αποποίηση Ευθύνης</h2>
+    <div class="caps-warning">
+      Η ΕΦΑΡΜΟΓΗ ΠΑΡΕΧΕΤΑΙ «ΩΣ ΕΧΕΙ» ΚΑΙ «ΩΣ ΔΙΑΤΙΘΕΤΑΙ» ΧΩΡΙΣ ΕΓΓΥΗΣΕΙΣ ΟΠΟΙΟΥΔΗΠΟΤΕ ΕΙΔΟΥΣ. ΔΕΝ ΕΓΓΥΟΜΑΣΤΕ ΟΤΙ Η ΕΦΑΡΜΟΓΗ ΘΑ ΛΕΙΤΟΥΡΓΕΙ ΑΔΙΑΛΕΙΠΤΑ, ΧΩΡΙΣ ΣΦΑΛΜΑΤΑ Η ΧΩΡΙΣ ΙΟΥΣ Η ΑΛΛΑ ΕΠΙΒΛΑΒΗ ΣΤΟΙΧΕΙΑ.
+    </div>
+    <p>Τα δεδομένα λειτουργικού ημερολογίου, οι οδηγίες νηστείας και οι αγιολογικές πληροφορίες παρέχονται ως γενική αναφορά. Τα ημερολογιακά συστήματα και οι λειτουργικές πρακτικές ενδέχεται να διαφέρουν μεταξύ μητροπόλεων και ενοριών. Να απευθύνεστε πάντα στην τοπική σας εκκλησία και στις πνευματικές αρχές.</p>
+
+    <h2>11. Περιορισμός Ευθύνης</h2>
+    <div class="caps-warning">
+      ΣΤΟ ΜΕΓΙΣΤΟ ΒΑΘΜΟ ΠΟΥ ΕΠΙΤΡΕΠΕΤΑΙ ΑΠΟ ΤΟ ΕΦΑΡΜΟΣΤΕΟ ΔΙΚΑΙΟ, Η KORAXFED ΔΕΝ ΕΥΘΥΝΕΤΑΙ ΓΙΑ ΕΜΜΕΣΕΣ, ΤΥΧΑΙΕΣ, ΕΙΔΙΚΕΣ, ΕΠΑΚΟΛΟΥΘΕΣ Η ΑΠΟΘΕΤΙΚΕΣ ΖΗΜΙΕΣ ΠΟΥ ΠΡΟΚΥΠΤΟΥΝ ΑΠΟ ΤΗ ΧΡΗΣΗ ΤΗΣ ΕΦΑΡΜΟΓΗΣ.
+    </div>
+    <p>Η συνολική ευθύνη μας προς υμάς για οποιεσδήποτε αξιώσεις που προκύπτουν από τους παρόντες Όρους ή τη χρήση της Εφαρμογής δεν υπερβαίνει το ποσό που μας καταβάλατε κατά τους 12 μήνες που προηγήθηκαν της αξίωσης.</p>
+
+    <h2>12. Αλλαγές στην Εφαρμογή</h2>
+    <p>Διατηρούμε το δικαίωμα να τροποποιήσουμε, αναστείλουμε ή διακόψουμε οποιοδήποτε τμήμα της Εφαρμογής ανά πάσα στιγμή, με ή χωρίς ειδοποίηση. Δεν ευθυνόμαστε έναντι υμών ή τρίτων για οποιαδήποτε τέτοια τροποποίηση, αναστολή ή διακοπή.</p>
+
+    <h2>13. Αλλαγές στους Παρόντες Όρους</h2>
+    <p>Ενδέχεται να ενημερώνουμε τους παρόντες Όρους περιοδικά. Όταν το κάνουμε, θα ενημερώνουμε την ημερομηνία «Τελευταία ενημέρωση» στην κορυφή αυτής της σελίδας. Η συνέχιση της χρήσης της Εφαρμογής μετά την ανάρτηση αλλαγών συνιστά αποδοχή των αναθεωρημένων Όρων.</p>
+
+    <h2>14. Εφαρμοστέο Δίκαιο</h2>
+    <p>Οι παρόντες Όροι διέπονται από τους νόμους της Κυπριακής Δημοκρατίας. Οποιαδήποτε διαφορά προκύπτει από τους παρόντες Όρους ή τη χρήση της Εφαρμογής υπάγεται στην αποκλειστική δικαιοδοσία των δικαστηρίων της Κύπρου.</p>
+
+    <h2>15. Επικοινωνήστε Μαζί Μας</h2>
+    <p>Εάν έχετε ερωτήσεις σχετικά με τους παρόντες Όρους Χρήσης, επικοινωνήστε μαζί μας:</p>
+    <p><strong>Email:</strong> <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a></p>
+    <p><strong>Πολιτική Απορρήτου:</strong> <a href="privacy-policy-el.html">Δείτε την Πολιτική Απορρήτου</a></p>
+    <p style="margin-top:2rem; font-style:italic; color:#6b6456; font-size:0.95rem;">OrthoCalendar — Φέρνοντας το Ορθόδοξο ημερολόγιο στη ζωή σας.</p>
+
+  </main>
+
+  <footer>
+    <p>© 2026 KoraxFed · <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a></p>
+    <p><a href="index.html">Αρχική</a> · <a href="privacy-policy-el.html">Πολιτική Απορρήτου</a> · <a href="terms-el.html">Όροι Χρήσης</a></p>
+  </footer>
+
+</body>
+</html>
