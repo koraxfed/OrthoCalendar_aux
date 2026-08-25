@@ -237,15 +237,15 @@
   <div class="card">
     <div class="icon-wrap">🔐</div>
 
-    <h1>Reset Your Password</h1>
+    <h1 id="pageHeading">Reset Your Password</h1>
 
     <div class="cross">☦</div>
 
-    <p>Tap the button below to open OrthoCalendar and set your new password.</p>
+    <p id="pageSubtitle">Tap the button below to open OrthoCalendar and set your new password.</p>
 
     <a class="btn" id="openBtn" href="#" onclick="openApp(event)">
       <span class="btn-icon">✦</span>
-      Open OrthoCalendar
+      <span id="btnLabel">Open OrthoCalendar</span>
     </a>
 
     <div class="state-msg error" id="errorMsg">
@@ -257,22 +257,67 @@
     </div>
 
     <p class="note">
-      This link is valid for 24 hours.<br/>
-      If you didn't request a password reset, you can safely ignore this page.
+      <span id="noteLine1">This link is valid for 24 hours.</span><br/>
+      <span id="noteLine2">If you didn't request a password reset, you can safely ignore this page.</span>
     </p>
   </div>
 
   <script>
+    // ── Localization ────────────────────────────────────────
+    // Detects the device/browser language and swaps all visible text.
+    // Greek devices see Greek copy; everything else falls back to English.
+    // No manual toggle — mirrors how the app itself falls back to device
+    // locale when the user hasn't set an explicit in-app language.
+    const strings = {
+      en: {
+        title: 'Reset Password — OrthoCalendar',
+        heading: 'Reset Your Password',
+        subtitle: 'Tap the button below to open OrthoCalendar and set your new password.',
+        btnLabel: 'Open OrthoCalendar',
+        infoMsg: 'Opening OrthoCalendar…',
+        errorMsg: 'Could not open the app. Please make sure OrthoCalendar is installed on this device.',
+        noteLine1: 'This link is valid for 24 hours.',
+        noteLine2: "If you didn't request a password reset, you can safely ignore this page.",
+      },
+      el: {
+        title: 'Επαναφορά Κωδικού — OrthoCalendar',
+        heading: 'Επαναφορά Κωδικού',
+        subtitle: 'Πατήστε το παρακάτω κουμπί για να ανοίξετε το OrthoCalendar και να ορίσετε νέο κωδικό.',
+        btnLabel: 'Άνοιγμα OrthoCalendar',
+        infoMsg: 'Άνοιγμα του OrthoCalendar…',
+        errorMsg: 'Δεν ήταν δυνατό το άνοιγμα της εφαρμογής. Βεβαιωθείτε ότι το OrthoCalendar είναι εγκατεστημένο σε αυτή τη συσκευή.',
+        noteLine1: 'Ο σύνδεσμος αυτός ισχύει για 24 ώρες.',
+        noteLine2: 'Αν δεν ζητήσατε επαναφορά κωδικού, μπορείτε να αγνοήσετε αυτή τη σελίδα με ασφάλεια.',
+      },
+    };
+
+    function applyLocale() {
+      const deviceLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      const isGreek = deviceLang.startsWith('el');
+      const t = isGreek ? strings.el : strings.en;
+
+      document.documentElement.lang = isGreek ? 'el' : 'en';
+      document.title = t.title;
+      document.getElementById('pageHeading').textContent = t.heading;
+      document.getElementById('pageSubtitle').textContent = t.subtitle;
+      document.getElementById('btnLabel').textContent = t.btnLabel;
+      document.getElementById('infoMsg').textContent = t.infoMsg;
+      document.getElementById('errorMsg').textContent = t.errorMsg;
+      document.getElementById('noteLine1').textContent = t.noteLine1;
+      document.getElementById('noteLine2').textContent = t.noteLine2;
+    }
+
+    // ── Deep link forwarding ──────────────────────────────────
     // Forward the full query string from Supabase to the app deep link.
-    // Supabase will call this page as:
-    // https://koraxfed.github.io/OrthoCalendar_aux/reset.html?token_hash=...&type=recovery
+    // Supabase calls this page as:
+    // https://koraxfed.github.io/OrthoCalendar_aux/reset.html?code=...
     // We pass those params straight through to the custom scheme so the
     // Supabase Flutter SDK can pick them up and fire the passwordRecovery event.
 
     function openApp(e) {
       e.preventDefault();
 
-      const params = window.location.search; // e.g. ?token_hash=abc&type=recovery
+      const params = window.location.search; // e.g. ?code=abc123
       const deepLink = 'com.orthocalendar.app://reset-password' + params;
 
       document.getElementById('infoMsg').style.display = 'block';
@@ -288,8 +333,10 @@
       }, 2500);
     }
 
-    // Auto-update the button href for accessibility (non-JS fallback)
     window.addEventListener('DOMContentLoaded', () => {
+      applyLocale();
+
+      // Auto-update the button href for accessibility (non-JS fallback)
       const params = window.location.search;
       const btn = document.getElementById('openBtn');
       btn.href = 'com.orthocalendar.app://reset-password' + params;
