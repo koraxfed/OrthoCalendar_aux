@@ -275,6 +275,10 @@
         infoMsg: 'Opening OrthoCalendar…',
         errorMsg: 'Could not open the app. Please make sure OrthoCalendar is installed on this device.',
         noteLine1: 'If you did not create an OrthoCalendar account, you can safely ignore this page.',
+        failTitle: 'Confirmation Failed — OrthoCalendar',
+        failHeading: 'Link Expired or Invalid',
+        failSubtitle: 'This confirmation link is no longer valid. Open OrthoCalendar, try to sign in, and use “Resend” to get a new confirmation email.',
+        failNote: 'Confirmation links expire after a while and can only be used once.',
       },
       el: {
         title: 'Το Email Επιβεβαιώθηκε — OrthoCalendar',
@@ -284,28 +288,50 @@
         infoMsg: 'Άνοιγμα του OrthoCalendar…',
         errorMsg: 'Δεν ήταν δυνατό το άνοιγμα της εφαρμογής. Βεβαιωθείτε ότι το OrthoCalendar είναι εγκατεστημένο σε αυτή τη συσκευή.',
         noteLine1: 'Αν δεν δημιουργήσατε εσείς λογαριασμό OrthoCalendar, μπορείτε να αγνοήσετε αυτή τη σελίδα με ασφάλεια.',
+        failTitle: 'Η Επιβεβαίωση Απέτυχε — OrthoCalendar',
+        failHeading: 'Ο Σύνδεσμος Έληξε ή Δεν Είναι Έγκυρος',
+        failSubtitle: 'Αυτός ο σύνδεσμος επιβεβαίωσης δεν ισχύει πλέον. Ανοίξτε το OrthoCalendar, δοκιμάστε να συνδεθείτε και πατήστε «Αποστολή ξανά» για νέο email επιβεβαίωσης.',
+        failNote: 'Οι σύνδεσμοι επιβεβαίωσης λήγουν μετά από κάποιο διάστημα και μπορούν να χρησιμοποιηθούν μόνο μία φορά.',
       },
     };
 
-    function applyLocale() {
+    // ── Did Supabase report a failure? ───────────────────────
+    // On a failed verification, Supabase redirects here with error details
+    // in either the query string or the hash fragment. This page previously
+    // said "Email Confirmed" unconditionally — i.e. it claimed success even
+    // when verification had failed. Always check before showing success.
+    function getAuthError() {
+      const q = new URLSearchParams(window.location.search);
+      const h = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+      return q.get('error') || q.get('error_code') ||
+             h.get('error') || h.get('error_code');
+    }
+
+    function applyState() {
       const deviceLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
       const isGreek = deviceLang.startsWith('el');
       const t = isGreek ? strings.el : strings.en;
+      const failed = getAuthError();
 
       document.documentElement.lang = isGreek ? 'el' : 'en';
-      document.title = t.title;
-      document.getElementById('pageHeading').textContent = t.heading;
-      document.getElementById('pageSubtitle').textContent = t.subtitle;
+      document.title = failed ? t.failTitle : t.title;
+      document.querySelector('.icon-wrap').textContent = failed ? '⚠' : '✓';
+      document.getElementById('pageHeading').textContent =
+        failed ? t.failHeading : t.heading;
+      document.getElementById('pageSubtitle').textContent =
+        failed ? t.failSubtitle : t.subtitle;
+      document.getElementById('noteLine1').textContent =
+        failed ? t.failNote : t.noteLine1;
+
       document.getElementById('btnLabel').textContent = t.btnLabel;
       document.getElementById('infoMsg').textContent = t.infoMsg;
       document.getElementById('errorMsg').textContent = t.errorMsg;
-      document.getElementById('noteLine1').textContent = t.noteLine1;
     }
 
     // ── Open the app ──────────────────────────────────────────
-    // Unlike reset.html, no query params/tokens are forwarded here — this
-    // page is purely informational. The user just re-opens the app (or is
-    // told to) and signs in normally with their now-confirmed account.
+    // No query params/tokens are forwarded to the app — verification already
+    // happened server-side before this page loaded. The user just re-opens
+    // the app and signs in normally with their now-confirmed account.
     function openApp(e) {
       e.preventDefault();
 
@@ -321,7 +347,7 @@
       }, 2500);
     }
 
-    window.addEventListener('DOMContentLoaded', applyLocale);
+    window.addEventListener('DOMContentLoaded', applyState);
   </script>
 
 </body>
