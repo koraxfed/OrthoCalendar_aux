@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Confirmed — OrthoCalendar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold:      #C9A84C;
+      --gold-light:#E8C96A;
+      --blue-deep: #1A237E;
+      --bg:        #0F1022;
+      --card:      #181A2E;
+      --text:      #E8E4D8;
+      --muted:     #9090A8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Crimson Pro', Georgia, serif;
+      color: var(--text);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── Byzantine cross pattern background ── */
+    .bg-pattern {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .bg-pattern svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.04;
+    }
+
+    /* ── Glow orbs ── */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(80px);
+    }
+    .orb-1 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(201,168,76,0.18), transparent 70%);
+      top: -100px; right: -100px;
+      animation: float1 8s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(26,35,126,0.3), transparent 70%);
+      bottom: -80px; left: -80px;
+      animation: float2 10s ease-in-out infinite;
+    }
+
+    @keyframes float1 {
+      0%,100% { transform: translate(0,0); }
+      50%      { transform: translate(-20px, 20px); }
+    }
+    @keyframes float2 {
+      0%,100% { transform: translate(0,0); }
+      50%      { transform: translate(20px,-20px); }
+    }
+
+    /* ── Card ── */
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--card);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 20px;
+      padding: 48px 40px 40px;
+      max-width: 400px;
+      width: calc(100% - 32px);
+      text-align: center;
+      box-shadow:
+        0 0 0 1px rgba(201,168,76,0.05),
+        0 24px 64px rgba(0,0,0,0.5),
+        0 0 80px rgba(201,168,76,0.06);
+      animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Icon ── */
+    .icon-wrap {
+      width: 76px; height: 76px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(26,35,126,0.2));
+      border: 1.5px solid rgba(201,168,76,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 0 32px rgba(201,168,76,0.15);
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 32px rgba(201,168,76,0.15); }
+      50%      { box-shadow: 0 0 48px rgba(201,168,76,0.30); }
+    }
+
+    /* ── Cross divider ── */
+    .cross {
+      color: var(--gold);
+      font-size: 18px;
+      opacity: 0.6;
+      margin: 16px 0;
+      letter-spacing: 4px;
+    }
+
+    /* ── Typography ── */
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+      animation: rise 0.7s 0.1s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+      font-weight: 300;
+      margin-top: 10px;
+      animation: rise 0.7s 0.2s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    /* ── Button ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 32px;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      color: #fff;
+      background: linear-gradient(135deg, #C9A84C, #E8C96A, #C9A84C);
+      background-size: 200% 100%;
+      text-decoration: none;
+      transition: background-position 0.4s, transform 0.15s, box-shadow 0.3s;
+      box-shadow: 0 6px 24px rgba(201,168,76,0.35), 0 2px 8px rgba(0,0,0,0.3);
+      animation: rise 0.7s 0.3s cubic-bezier(0.16,1,0.3,1) both;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn:hover {
+      background-position: right center;
+      box-shadow: 0 8px 32px rgba(201,168,76,0.5), 0 2px 8px rgba(0,0,0,0.3);
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+    }
+
+    .btn-icon { font-size: 18px; }
+
+    /* ── Footer note ── */
+    .note {
+      margin-top: 20px;
+      font-size: 12.5px;
+      color: rgba(144,144,168,0.6);
+      line-height: 1.6;
+      animation: rise 0.7s 0.4s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    /* ── Success / Error states ── */
+    .state-msg {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .state-msg.error {
+      background: rgba(183,28,28,0.15);
+      border: 1px solid rgba(183,28,28,0.3);
+      color: #EF9A9A;
+    }
+    .state-msg.info {
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      color: var(--gold-light);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background crosses -->
+  <div class="bg-pattern">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <pattern id="crosses" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+          <!-- Orthodox cross shape -->
+          <rect x="27" y="10" width="6" height="40" fill="#C9A84C"/>
+          <rect x="10" y="23" width="40" height="6" fill="#C9A84C"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#crosses)"/>
+    </svg>
+  </div>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="card">
+    <div class="icon-wrap">✓</div>
+
+    <h1 id="pageHeading">Email Confirmed</h1>
+
+    <div class="cross">☦</div>
+
+    <p id="pageSubtitle">Your email has been confirmed. Tap the button below to open OrthoCalendar and sign in.</p>
+
+    <a class="btn" id="openBtn" href="com.orthocalendar.app://" onclick="openApp(event)">
+      <span class="btn-icon">✦</span>
+      <span id="btnLabel">Open OrthoCalendar</span>
+    </a>
+
+    <div class="state-msg error" id="errorMsg">
+      Could not open the app. Please make sure OrthoCalendar is installed on this device.
+    </div>
+
+    <div class="state-msg info" id="infoMsg">
+      Opening OrthoCalendar…
+    </div>
+
+    <p class="note">
+      <span id="noteLine1">If you did not create an OrthoCalendar account, you can safely ignore this page.</span>
+    </p>
+  </div>
+
+  <script>
+    // ── Localization ────────────────────────────────────────
+    // Detects the device/browser language and swaps all visible text.
+    // Greek devices see Greek copy; everything else falls back to English.
+    // No manual toggle — mirrors reset.html's existing pattern.
+    const strings = {
+      en: {
+        title: 'Email Confirmed — OrthoCalendar',
+        heading: 'Email Confirmed',
+        subtitle: 'Your email has been confirmed. Tap the button below to open OrthoCalendar and sign in.',
+        btnLabel: 'Open OrthoCalendar',
+        infoMsg: 'Opening OrthoCalendar…',
+        errorMsg: 'Could not open the app. Please make sure OrthoCalendar is installed on this device.',
+        noteLine1: 'If you did not create an OrthoCalendar account, you can safely ignore this page.',
+      },
+      el: {
+        title: 'Το Email Επιβεβαιώθηκε — OrthoCalendar',
+        heading: 'Το Email Επιβεβαιώθηκε',
+        subtitle: 'Το email σας επιβεβαιώθηκε. Πατήστε το παρακάτω κουμπί για να ανοίξετε το OrthoCalendar και να συνδεθείτε.',
+        btnLabel: 'Άνοιγμα OrthoCalendar',
+        infoMsg: 'Άνοιγμα του OrthoCalendar…',
+        errorMsg: 'Δεν ήταν δυνατό το άνοιγμα της εφαρμογής. Βεβαιωθείτε ότι το OrthoCalendar είναι εγκατεστημένο σε αυτή τη συσκευή.',
+        noteLine1: 'Αν δεν δημιουργήσατε εσείς λογαριασμό OrthoCalendar, μπορείτε να αγνοήσετε αυτή τη σελίδα με ασφάλεια.',
+      },
+    };
+
+    function applyLocale() {
+      const deviceLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      const isGreek = deviceLang.startsWith('el');
+      const t = isGreek ? strings.el : strings.en;
+
+      document.documentElement.lang = isGreek ? 'el' : 'en';
+      document.title = t.title;
+      document.getElementById('pageHeading').textContent = t.heading;
+      document.getElementById('pageSubtitle').textContent = t.subtitle;
+      document.getElementById('btnLabel').textContent = t.btnLabel;
+      document.getElementById('infoMsg').textContent = t.infoMsg;
+      document.getElementById('errorMsg').textContent = t.errorMsg;
+      document.getElementById('noteLine1').textContent = t.noteLine1;
+    }
+
+    // ── Open the app ──────────────────────────────────────────
+    // Unlike reset.html, no query params/tokens are forwarded here — this
+    // page is purely informational. The user just re-opens the app (or is
+    // told to) and signs in normally with their now-confirmed account.
+    function openApp(e) {
+      e.preventDefault();
+
+      document.getElementById('infoMsg').style.display = 'block';
+      document.getElementById('errorMsg').style.display = 'none';
+
+      window.location.href = 'com.orthocalendar.app://';
+
+      // If we're still here after 2.5s the app didn't open
+      setTimeout(() => {
+        document.getElementById('infoMsg').style.display = 'none';
+        document.getElementById('errorMsg').style.display = 'block';
+      }, 2500);
+    }
+
+    window.addEventListener('DOMContentLoaded', applyLocale);
+  </script>
+
+</body>
+</html>
