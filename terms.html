@@ -10,7 +10,7 @@
     :root {
       --navy:#1a1f3a; --gold:#c9a84c; --gold-lt:#e8c96a;
       --ivory:#f8f4e8; --ivory2:#ede8d5; --red:#8b2635;
-      --text:#2d2a22; --bg:#faf7f0;
+      --text:#2d2a22; --bg:#faf7f0; --muted:#6b655a;
     }
     body { background:var(--bg); color:var(--text); font-family:'Crimson Text',Georgia,serif; font-size:18px; line-height:1.75; }
     nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 2.5rem; background:var(--navy); border-bottom:2px solid var(--gold); position:sticky; top:0; z-index:100; }
@@ -39,6 +39,7 @@
     .content a { color:var(--red); text-decoration:underline; text-underline-offset:2px; }
     .intro-box { background:var(--ivory2); border-left:3px solid var(--gold); padding:1.2rem 1.6rem; margin-bottom:2rem; font-style:italic; color:#4a4540; font-size:1rem; }
     .caps-warning { font-size:0.9rem; line-height:1.65; background:rgba(139,38,53,0.05); border:1px solid rgba(139,38,53,0.2); padding:1rem 1.4rem; color:#5a2020; margin-bottom:1rem; }
+    .note-box { background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.35); padding:1rem 1.4rem; margin:1.2rem 0; font-size:0.95rem; color:#4a4540; }
     footer { text-align:center; padding:2.5rem 2rem; background:var(--navy); font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.1em; color:rgba(248,244,232,0.3); border-top:2px solid rgba(201,168,76,0.25); }
     footer a { color:rgba(201,168,76,0.5); text-decoration:none; }
     footer p + p { margin-top:0.5rem; }
@@ -58,7 +59,7 @@
   <header class="page-header">
     <span class="page-header-ornament">☩ ✦ ☩</span>
     <h1>Terms of Service</h1>
-    <p class="updated">Last updated: March 17, 2026</p>
+    <p class="updated">Last updated: September 20, 2026</p>
     <div class="lang-toggle">
       <a href="terms.html" class="active">English</a>
       <a href="terms-el.html">Ελληνικά</a>
@@ -73,7 +74,7 @@
 
     <h2>1. Acceptance of Terms</h2>
     <p>By downloading, installing, or using OrthoCalendar ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
-    <p>These Terms constitute a legal agreement between you and KoraxFed ("we," "us," or "our"), the developer of OrthoCalendar.</p>
+    <p>These Terms constitute a legal agreement between you and KoraxFed ("we," "us," or "our"), the developer of OrthoCalendar, based in Cyprus.</p>
 
     <h2>2. Description of Service</h2>
     <p>OrthoCalendar is a Greek Orthodox liturgical calendar application that provides:</p>
@@ -81,97 +82,140 @@
       <li>Daily saint commemorations and feast day information</li>
       <li>Liturgical calendar for both the Revised Julian and Old Julian calendar systems</li>
       <li>Fasting day guidance</li>
-      <li>Name day tracking and celebrations for contacts</li>
-      <li>AI-powered spiritual reflections and information (Premium feature)</li>
+      <li>Nameday and birthday tracking for contacts you add yourself, with reminders</li>
+      <li>Offline access to the calendar, saints, fasting rules and your saved contacts</li>
+      <li>AI-powered spiritual reflections and an AI chat assistant, with conversation history (Premium feature)</li>
+      <li>Crisis helpline information, described in section 9</li>
       <li>Subscription-based premium features</li>
     </ul>
 
-    <h2>3. User Accounts</h2>
-    <h3>3.1 Registration</h3>
-    <p>To access certain features, you must create an account by providing an email address and password. You are responsible for maintaining the confidentiality of your account credentials.</p>
-    <h3>3.2 Accuracy of Information</h3>
+    <h2>3. Eligibility</h2>
+    <p><strong>You must be at least 16 years old to create an account or use the App.</strong> By using the App, you confirm that you meet this requirement. If we learn that an account belongs to someone under 16, we will delete it.</p>
+
+    <h2>4. User Accounts</h2>
+    <h3>4.1 Registration</h3>
+    <p>To access certain features, you must create an account, either by providing an email address and password, or by signing in with Google. Signing in with Google creates an account the first time you use it. You are responsible for maintaining the confidentiality of your account credentials.</p>
+    <h3>4.2 Email Confirmation</h3>
+    <p>If you register with an email address and password, you must confirm your email address before you can sign in. If the confirmation message does not arrive, you can request a new one from the sign-in screen.</p>
+    <h3>4.3 Accuracy of Information</h3>
     <p>You agree to provide accurate, current, and complete information when creating your account, and to keep it up to date.</p>
-    <h3>3.3 Account Security</h3>
+    <h3>4.4 Account Security</h3>
     <p>You are solely responsible for all activity that occurs under your account. Notify us immediately at <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a> if you suspect unauthorized use of your account.</p>
-    <h3>3.4 Account Deletion</h3>
-    <p>You may request deletion of your account and associated data at any time by contacting us at <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a>. We will process deletion requests within 30 days.</p>
+    <h3>4.5 Contacts You Add</h3>
+    <p>The People feature stores details about other people, which you enter yourself. You are responsible for the information you add about others and for having a proper basis to store it. Please add only what you need, and remove contacts you no longer wish to keep.</p>
+    <h3>4.6 Account Deletion</h3>
+    <p>You can delete your account and its associated data at any time from within the App, at <em>Profile → Delete Account</em>. This is immediate and cannot be undone. If you have already uninstalled the App or cannot sign in, contact us at <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a> and we will process the deletion within 30 days. Deleting your account does not cancel a paid subscription — see section 5.7.</p>
 
-    <h2>4. Subscriptions and Payments</h2>
-    <h3>4.1 Free Tier</h3>
-    <p>OrthoCalendar is available for free with limited features. Free users may see advertisements served by Google AdMob.</p>
-    <h3>4.2 Premium Subscriptions</h3>
-    <p>Premium subscriptions ("OrthoCalendar Premium") are available on a monthly or annual basis and unlock additional features including the AI chat assistant and an ad-free experience.</p>
-    <h3>4.3 Billing</h3>
-    <p>Subscriptions are billed through the Google Play Store or Apple App Store. Prices are displayed at the time of purchase and may vary by region. Applicable taxes may apply.</p>
-    <h3>4.4 Renewal</h3>
-    <p>Subscriptions renew automatically at the end of each billing period unless cancelled at least 24 hours before the renewal date. You can manage or cancel your subscription at any time through your Google Play or Apple App Store account settings.</p>
-    <h3>4.5 Refunds</h3>
-    <p>Refund requests are handled by Google Play or Apple App Store according to their respective refund policies. We do not process refunds directly.</p>
-    <h3>4.6 Free Trials</h3>
+    <h2>5. Subscriptions and Payments</h2>
+    <h3>5.1 Free Tier</h3>
+    <p>OrthoCalendar is available for free with limited features. On the free tier you may save up to <strong>7 contacts</strong>, the AI chat assistant is unavailable, and you may see advertisements served by Google AdMob.</p>
+    <h3>5.2 Premium Subscriptions</h3>
+    <p>Premium subscriptions ("OrthoCalendar Premium") are available on a monthly or annual basis and unlock additional features including unlimited contacts, the AI chat assistant, and an ad-free experience.</p>
+    <h3>5.3 AI Usage Limits</h3>
+    <p>Use of the AI chat assistant is limited to <strong>20 messages per day</strong> for Premium subscribers. We may adjust this limit, and will not reduce it without notice.</p>
+    <h3>5.4 Billing</h3>
+    <p>Subscriptions are billed through the app store from which you obtained the App — currently the Google Play Store, and the Apple App Store where the App is distributed there in future. Prices are displayed at the time of purchase and may vary by region. Applicable taxes are included where required.</p>
+    <h3>5.5 Renewal</h3>
+    <p>Subscriptions renew automatically at the end of each billing period unless cancelled at least 24 hours before the renewal date. You can manage or cancel your subscription at any time through your app store account settings.</p>
+    <h3>5.6 Refunds and Withdrawal</h3>
+    <p>Refund requests are handled by the app store according to its own refund policy. We do not process refunds directly. If you are a consumer in the European Union, you may have a statutory right to withdraw from a purchase within 14 days; this right may be lost once digital content has been supplied with your consent, and refunds are administered by the app store.</p>
+    <h3>5.7 Cancellation</h3>
+    <p>Cancelling a subscription stops future renewals. You keep Premium access until the end of the period you have already paid for. Deleting your account does not cancel a subscription — cancel it in your app store account settings.</p>
+    <h3>5.8 Free Trials</h3>
     <p>Where offered, free trials convert automatically to paid subscriptions at the end of the trial period unless cancelled beforehand.</p>
+    <h3>5.9 Price Changes</h3>
+    <p>We may change subscription prices. Existing subscribers are notified by the app store in advance and, where required, asked to consent before a new price takes effect.</p>
 
-    <h2>5. Acceptable Use</h2>
+    <h2>6. Acceptable Use</h2>
     <p>You agree not to:</p>
     <ul>
       <li>Use the App for any unlawful purpose or in violation of any applicable laws</li>
       <li>Attempt to reverse-engineer, decompile, or extract the source code of the App</li>
       <li>Use automated tools to access or scrape the App or its content</li>
-      <li>Attempt to gain unauthorized access to any part of the App or its backend systems</li>
+      <li>Attempt to gain unauthorized access to any part of the App or its backend systems, or to circumvent free-tier limits</li>
       <li>Reproduce, distribute, or commercially exploit App content without our written permission</li>
       <li>Use the AI chat feature to generate content that is harmful, offensive, or contrary to the spirit of the App's religious purpose</li>
+      <li>Store information about other people in the People feature that you have no proper basis to store</li>
     </ul>
 
-    <h2>6. Content and Intellectual Property</h2>
-    <h3>6.1 App Content</h3>
+    <h2>7. Content and Intellectual Property</h2>
+    <h3>7.1 App Content</h3>
     <p>All content provided in the App — including saint biographies, liturgical information, reflections, and AI-generated text — is provided for informational and spiritual purposes only. While we strive for accuracy, we do not guarantee the completeness or theological correctness of any content.</p>
-    <h3>6.2 Ownership</h3>
+    <h3>7.2 Ownership</h3>
     <p>OrthoCalendar and all its content, features, and functionality are owned by KoraxFed and are protected by copyright and other intellectual property laws.</p>
-    <h3>6.3 User Content</h3>
-    <p>If you interact with the AI chat feature, your messages are processed to generate responses but are not stored permanently or used to train AI models.</p>
+    <h3>7.3 Your Content</h3>
+    <p>The contacts you add and the messages you send to the AI assistant remain yours. You grant us only the permission needed to store and process them in order to operate the features you are using.</p>
+    <h3>7.4 AI Chat Messages</h3>
+    <p>Your messages to the AI assistant, and the replies you receive, are <strong>stored in your account</strong> so the conversation can be shown back to you as history. They are kept for up to 90 days and you can delete the whole history yourself at any time from within the assistant. Full details, including how the 90 days is applied, are in section 6 of our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <p>Google states that content sent through the paid Gemini API is not used to train its models; that is Google's commitment rather than ours. <strong>We do not use your messages to train any AI model.</strong></p>
 
-    <h2>7. AI Chat Feature (Premium)</h2>
+    <h2>8. AI Chat Feature (Premium)</h2>
     <p>The AI chat feature is powered by Google Gemini and is intended to provide general spiritual information and liturgical context. It is not a substitute for guidance from a priest, spiritual father, or other qualified religious authority. Responses are AI-generated and may contain inaccuracies. Always consult appropriate religious authorities for matters of faith and practice.</p>
-    <p>Usage of the AI chat feature is limited to 20 messages per day for Premium users.</p>
+    <p>Usage of the AI chat feature is limited to 20 messages per day for Premium users. We may suspend access to the feature where it is being misused.</p>
 
-    <h2>8. Advertisements</h2>
-    <p>Free users may see advertisements provided by Google AdMob. Advertisements are governed by Google's advertising policies. We do not control the content of advertisements and are not responsible for advertiser content.</p>
+    <h2>9. Not a Crisis, Medical or Emergency Service</h2>
+    <div class="caps-warning">
+      ORTHOCALENDAR IS NOT A CRISIS SERVICE. IF YOU ARE IN IMMEDIATE DANGER, OR YOU ARE WORRIED ABOUT YOUR OWN SAFETY OR SOMEONE ELSE'S, PLEASE CALL YOUR LOCAL EMERGENCY NUMBER OR A CRISIS HELPLINE STRAIGHT AWAY.
+    </div>
+    <p>If a message you write to the AI assistant suggests you may be thinking about suicide or self-harm, the App shows a card with crisis helpline information. This is offered as a convenience only, and by using the App you accept that:</p>
+    <ul>
+      <li>The App is <strong>not</strong> a counselling, medical, psychiatric or emergency service, and it does not monitor your messages for your safety. Nobody at OrthoCalendar is alerted, and no emergency service is contacted on your behalf.</li>
+      <li>The AI assistant is <strong>not</strong> a clinician, counsellor, priest or spiritual father, and nothing it says is medical or professional advice.</li>
+      <li>Helpline numbers, opening hours and availability were checked when this feature was published but <strong>may change without notice</strong>, and we cannot guarantee any service will be reachable or able to help.</li>
+      <li>Helpline information is shown for a limited number of countries. Where we do not have verified information, the App directs you to an external helpline directory instead of showing a number.</li>
+      <li>Third-party helplines and directories are independent of us. We do not control them and are not responsible for them.</li>
+    </ul>
+    <p>The detection is deliberately cautious and may show the card when you were not in distress — for example when you ask a theological question about suicide. It may also fail to recognise distress. Please do not rely on it.</p>
 
-    <h2>9. Third-Party Services</h2>
+    <h2>10. Advertisements</h2>
+    <p>Free users may see advertisements provided by Google AdMob. Advertisements are governed by Google's advertising policies. We do not control the content of advertisements and are not responsible for advertiser content. If you are in the European Economic Area or the UK, you can review your advertising choices at any time from <em>Profile → Manage Privacy Settings</em>.</p>
+
+    <h2>11. Availability and Offline Use</h2>
+    <p>Parts of the App keep working without an internet connection by storing a copy of the calendar and your saved contacts on your device. Features that require a connection — including the AI assistant, and adding or editing contacts — are unavailable while you are offline. We do not guarantee uninterrupted availability of any online feature.</p>
+
+    <h2>12. Third-Party Services</h2>
     <p>The App integrates with the following third-party services, each governed by their own terms and privacy policies:</p>
     <ul>
-      <li>Google (AdMob, Gemini AI) — <a href="https://policies.google.com" target="_blank" rel="noopener">policies.google.com</a></li>
+      <li>Google (AdMob, Gemini AI, Google Sign-In) — <a href="https://policies.google.com" target="_blank" rel="noopener">policies.google.com</a></li>
       <li>Supabase — <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></li>
       <li>RevenueCat — <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></li>
-      <li>Google Play Store / Apple App Store — for subscription billing</li>
+      <li>Brevo, for account emails — <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">brevo.com/legal/privacypolicy</a></li>
+      <li>Google Play Store, and the Apple App Store where applicable — for subscription billing</li>
     </ul>
     <p>We are not responsible for the practices of these third-party services.</p>
 
-    <h2>10. Disclaimers</h2>
+    <h2>13. Disclaimers</h2>
     <div class="caps-warning">
       THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
     </div>
     <p>Liturgical calendar data, fasting guidelines, and saint information are provided as a general reference. Calendar systems and liturgical practices may vary between jurisdictions and parishes. Always defer to your local church and spiritual authorities.</p>
+    <p>Reminders and notifications are scheduled on your device and are delivered by your device's operating system. Battery-saving settings and manufacturer restrictions may delay or prevent them, so please do not rely on the App as your only reminder for something important.</p>
 
-    <h2>11. Limitation of Liability</h2>
+    <h2>14. Limitation of Liability</h2>
     <div class="caps-warning">
       TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, KORAXFED SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APP, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
     </div>
     <p>Our total liability to you for any claims arising from these Terms or your use of the App shall not exceed the amount you paid us in the 12 months preceding the claim.</p>
+    <p>Nothing in these Terms excludes or limits our liability for death or personal injury caused by negligence, for fraud, or for any other liability that cannot lawfully be excluded. If you are a consumer, you keep all rights granted to you by the mandatory consumer law of your country of residence, and nothing here affects them.</p>
 
-    <h2>12. Changes to the App</h2>
-    <p>We reserve the right to modify, suspend, or discontinue any part of the App at any time, with or without notice. We are not liable to you or any third party for any modification, suspension, or discontinuation of the App.</p>
+    <h2>15. Changes to the App</h2>
+    <p>We reserve the right to modify, suspend, or discontinue any part of the App at any time, with or without notice. We are not liable to you or any third party for any modification, suspension, or discontinuation of the App. Where we discontinue a paid feature, we will provide a refund of any unused portion where required by law.</p>
 
-    <h2>13. Changes to These Terms</h2>
+    <h2>16. Suspension and Termination</h2>
+    <p>We may suspend or terminate your access to the App if you materially breach these Terms, in particular section 6. Where it is reasonable to do so, we will tell you why and give you an opportunity to put things right. You may stop using the App and delete your account at any time.</p>
+
+    <h2>17. Changes to These Terms</h2>
     <p>We may update these Terms from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of the App after changes are posted constitutes your acceptance of the revised Terms. We encourage you to review these Terms periodically.</p>
 
-    <h2>14. Governing Law</h2>
-    <p>These Terms are governed by the laws of the Republic of Cyprus, without regard to conflict of law principles. Any disputes arising from these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts of Cyprus.</p>
+    <h2>18. Governing Law</h2>
+    <p>These Terms are governed by the laws of the Republic of Cyprus, without regard to conflict of law principles. Any disputes arising from these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts of Cyprus. If you are a consumer resident in the European Union, this does not deprive you of the protection of the mandatory laws of your country of residence, nor of the right to bring proceedings there.</p>
 
-    <h2>15. Contact Us</h2>
+    <h2>19. Contact Us</h2>
     <p>If you have any questions about these Terms of Service, please contact us:</p>
-    <p><strong>Email:</strong> <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a></p>
+    <p><strong>KoraxFed</strong>, Cyprus<br />
+    <strong>Email:</strong> <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a></p>
     <p><strong>Privacy Policy:</strong> <a href="privacy-policy.html">View Privacy Policy</a></p>
-    <p style="margin-top:2rem; font-style:italic; color:#6b6456; font-size:0.95rem;">OrthoCalendar — Bringing the Orthodox calendar to life.</p>
+    <p style="margin-top:2rem; font-style:italic; color:var(--muted); font-size:0.95rem;">OrthoCalendar — Bringing the Orthodox calendar to life.</p>
 
   </main>
 
