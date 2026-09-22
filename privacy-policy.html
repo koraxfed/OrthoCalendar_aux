@@ -10,7 +10,7 @@
     :root {
       --navy:#1a1f3a; --gold:#c9a84c; --gold-lt:#e8c96a;
       --ivory:#f8f4e8; --ivory2:#ede8d5; --red:#8b2635;
-      --text:#2d2a22; --bg:#faf7f0;
+      --text:#2d2a22; --bg:#faf7f0; --muted:#6b655a;
     }
     body { background:var(--bg); color:var(--text); font-family:'Crimson Text',Georgia,serif; font-size:18px; line-height:1.75; }
     nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 2.5rem; background:var(--navy); border-bottom:2px solid var(--gold); position:sticky; top:0; z-index:100; }
@@ -38,6 +38,7 @@
     .content ul li::before { content:'✦'; position:absolute; left:0; color:var(--gold); font-size:0.6rem; top:0.55rem; }
     .content a { color:var(--red); text-decoration:underline; text-underline-offset:2px; }
     .intro-box { background:var(--ivory2); border-left:3px solid var(--gold); padding:1.2rem 1.6rem; margin-bottom:2rem; font-style:italic; color:#4a4540; font-size:1rem; }
+    .note-box { background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.35); padding:1rem 1.4rem; margin:1.2rem 0; font-size:0.95rem; color:#4a4540; }
     footer { text-align:center; padding:2.5rem 2rem; background:var(--navy); font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.1em; color:rgba(248,244,232,0.3); border-top:2px solid rgba(201,168,76,0.25); }
     footer a { color:rgba(201,168,76,0.5); text-decoration:none; }
     footer p + p { margin-top:0.5rem; }
@@ -57,7 +58,7 @@
   <header class="page-header">
     <span class="page-header-ornament">☩ ✦ ☩</span>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: August 13, 2026</p>
+    <p class="updated">Last updated: September 20, 2026</p>
     <div class="lang-toggle">
       <a href="privacy-policy.html" class="active">English</a>
       <a href="privacy-policy-el.html">Ελληνικά</a>
@@ -67,77 +68,169 @@
   <main class="content">
 
     <div class="intro-box">
-      This Privacy Policy describes how OrthoCalendar ("we", "us", or "our") collects, uses, and shares information about you when you use our mobile application OrthoCalendar (the "App").
+      This Privacy Policy describes how OrthoCalendar ("we", "us", or "our") collects, uses, and shares information about you when you use our mobile application OrthoCalendar (the "App"). We have tried to describe what the App actually does in plain language, including the things it deliberately does not do.
     </div>
 
-    <h2>1. Information We Collect</h2>
+    <h2>1. Who We Are</h2>
+    <p>OrthoCalendar is developed and operated by <strong>KoraxFed</strong>, based in Cyprus. For the purposes of the EU General Data Protection Regulation (GDPR), KoraxFed is the <strong>data controller</strong> for the personal data described in this policy.</p>
+    <p>You can reach us about anything in this policy at <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a>.</p>
+
+    <h2>2. Information We Collect</h2>
 
     <h3>Information you provide to us</h3>
     <ul>
-      <li><strong>Account information:</strong> When you create an account, we collect your email address and password.</li>
-      <li><strong>Contact information:</strong> If you use the People feature, we store the names, birthdays, and namedays of contacts you manually enter into the App. This information is stored securely in our database. If you also use the AI Chat Assistant, the names and upcoming celebration dates of these contacts may be included in the information sent to Google's Gemini API so the assistant can answer questions about upcoming birthdays and namedays. See "Google Gemini AI" below.</li>
+      <li><strong>Account information:</strong> When you create an account with email and password, we collect your email address and password. You may also provide a display name.</li>
+      <li><strong>Google Sign-In:</strong> If you choose to sign in with Google, Google provides us with your email address and basic profile information. Signing in with Google <em>creates an account</em> the first time you use it. We never receive your Google password.</li>
+      <li><strong>Contact information:</strong> If you use the People feature, we store the details you enter for each contact — their <strong>name, birthday, nameday, phone number and any notes</strong> you add. Please note that this is information about other people: only add details you are comfortable storing, and be mindful that those people have not agreed to this policy themselves.</li>
+      <li><strong>AI chat messages:</strong> If you use the Orthodox AI Assistant, the messages you send and the replies you receive are stored so the conversation can be shown back to you as history. See section 6.</li>
+      <li><strong>Messages you send us:</strong> If you contact us by email from within the App, we receive whatever you write.</li>
     </ul>
 
     <h3>Information collected automatically</h3>
+    <p>The App contains <strong>no analytics, crash-reporting or advertising-attribution software</strong>. We do not track which screens you open, how long you spend in the App, or what you tap. The only device information the App itself reads is:</p>
     <ul>
-      <li><strong>Usage data:</strong> We may collect information about how you use the App, such as the features you use and the time spent in the App.</li>
-      <li><strong>Device information:</strong> We may collect information about your device, including device type and operating system version.</li>
+      <li><strong>Your device's time zone</strong> — to schedule notifications at the right local time, and to choose which crisis helplines to show (see section 7).</li>
+      <li><strong>Your device's language and country setting</strong> — to display the App in the right language and to build the helpline directory link.</li>
+      <li><strong>The App version</strong> — shown to you at the bottom of the Profile tab so you can quote it in a bug report.</li>
     </ul>
+    <p>Our backend provider necessarily sees technical connection information such as your IP address when the App talks to it, as any internet service does.</p>
+    <div class="note-box">
+      <strong>The App does not read your phone's address book.</strong> Contacts in the People feature are only the ones you type in yourself. The App also does not request or use GPS, precise location, your camera, your photos, or your microphone.
+    </div>
 
     <h3>Advertising</h3>
-    <p>The free version of the App may display advertisements served by Google AdMob. AdMob may collect and use data as described in Google's Privacy Policy, including the use of the Advertising ID on your device.</p>
+    <p>The free version of the App displays banner advertisements served by <strong>Google AdMob</strong>. To do this, the Google advertising software included in the App can access your device's <strong>Advertising ID</strong> and related Android advertising signals (including the Privacy Sandbox "Topics" and attribution features). AdMob may collect and use data as described in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+    <p>If you are in the European Economic Area or the UK, you are asked for your advertising choices the first time you use the App, through Google's consent tool. You can change that choice at any time from <em>Profile → Manage Privacy Settings</em>. Premium subscribers see no advertisements at all.</p>
 
-    <h2>2. How We Use Your Information</h2>
+    <h2>3. How We Use Your Information</h2>
     <p>We use the information we collect to:</p>
     <ul>
-      <li>Provide, maintain, and improve the App</li>
-      <li>Create and manage your account</li>
-      <li>Personalize your experience (e.g. language preference, calendar type)</li>
-      <li>Send you relevant notifications about upcoming namedays and birthdays of contacts you have added</li>
-      <li>Display relevant advertisements to free users</li>
+      <li>Provide, maintain and secure the App</li>
+      <li>Create and manage your account, and confirm your email address</li>
+      <li>Personalise your experience (language preference, calendar type)</li>
+      <li>Send you the notifications you have switched on, about upcoming namedays and birthdays of contacts you added, and the daily saint. <em>These reminders are generated on your device and include the contact's name in the notification, which means the name can appear on your lock screen.</em></li>
+      <li>Answer your questions through the AI Assistant</li>
+      <li>Manage your subscription and keep your Premium status up to date</li>
+      <li>Display advertisements to users on the free tier</li>
     </ul>
+    <p><strong>We do not sell your personal information, and we do not use your data to build advertising profiles ourselves.</strong></p>
 
-    <h2>3. How We Share Your Information</h2>
-    <p>We do not sell your personal information. We may share your information with:</p>
+    <h2>4. Legal Bases for Processing</h2>
+    <p>If you are in the European Economic Area or the UK, we rely on the following legal bases under Article 6 of the GDPR:</p>
     <ul>
-      <li><strong>Supabase:</strong> Our backend database and authentication provider. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase Privacy Policy</a></li>
-      <li><strong>Google AdMob:</strong> Our advertising partner for free users. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
-      <li><strong>Google Gemini AI:</strong> Our AI assistant feature uses Google's Gemini API to generate responses. In addition to the message you type, this may include contextual information such as today's date, feast day, and fasting status, and — if you use the People feature — the names and upcoming celebration dates of contacts you've added, so the assistant can answer related questions. This context is not used to identify you personally to Google. Queries and context sent to the AI assistant may be processed by Google. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Performance of a contract</strong> — to create and run your account and provide the features you ask for, including contacts, notifications, the AI Assistant and subscriptions.</li>
+      <li><strong>Legitimate interests</strong> — to keep the service secure, prevent abuse, and fix faults. We balance this against your rights.</li>
+      <li><strong>Consent</strong> — for personalised advertising in the EEA and UK, collected through Google's consent tool and withdrawable at any time from <em>Profile → Manage Privacy Settings</em>.</li>
+      <li><strong>Legal obligation</strong> — where we must retain or disclose information to comply with the law.</li>
     </ul>
-    <p>We may also share your information if required by law or to protect our rights.</p>
 
-    <h2>4. Data Storage and Security</h2>
-    <p>Your data is stored securely using Supabase, which uses industry-standard encryption. We take reasonable measures to protect your information from unauthorized access, use, or disclosure. However, no method of transmission over the internet is 100% secure.</p>
-
-    <h2>5. Data Retention &amp; Account Deletion</h2>
-    <p>We retain your personal data only as long as your account is active or as needed to provide you with our services.</p>
+    <h2>5. Who We Share Information With</h2>
+    <p>We do not sell your personal information. We share it with the following service providers, each only to the extent needed to run the App:</p>
     <ul>
-      <li><strong>In-App Deletion:</strong> You can delete your account and all associated data at any time directly within the OrthoCalendar app. Navigate to <em>Profile → Delete Account</em>.</li>
-      <li><strong>Manual Request:</strong> If you have already uninstalled the app or cannot access your account, you may request deletion by emailing us at <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a>. Upon confirmation, we will permanently remove all personal data associated with your account from our active databases, except where retention is required by law.</li>
+      <li><strong>Supabase</strong> — our database and authentication provider. Holds your account, profile, contacts and chat history. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase Privacy Policy</a></li>
+      <li><strong>Google Gemini</strong> — powers the AI Assistant. See section 6 for exactly what is sent. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Google AdMob</strong> — serves advertisements to free users, as described in section 2. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Google Sign-In</strong> — if you choose it as your sign-in method. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>RevenueCat</strong> — manages subscriptions. It receives your account identifier (a random ID, not your email or name) together with your purchase and subscription status, so the App knows whether Premium is active. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a></li>
+      <li><strong>Google Play</strong> — processes subscription payments. We never see or handle your payment card details. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Brevo</strong> — delivers our account emails (address confirmation and password reset). It receives your email address. Please note that Brevo automatically wraps the links inside those emails in its own tracking redirect, which records that a link was opened; this cannot be switched off for this type of email. <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Brevo Privacy Policy</a></li>
     </ul>
+    <p>We may also disclose information if we are required to do so by law, or where it is necessary to protect our rights, our users, or the safety of any person.</p>
 
-    <h2>6. Children's Privacy</h2>
-    <p>OrthoCalendar is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected information from a child under 13, please contact us immediately.</p>
+    <h2>6. The AI Assistant and Chat History</h2>
+    <p>The Orthodox AI Assistant is a Premium feature powered by Google's Gemini API.</p>
 
-    <h2>7. Your Rights</h2>
-    <p>Depending on your location, you may have the right to:</p>
+    <h3>What is sent to Google</h3>
     <ul>
-      <li>Access the personal information we hold about you</li>
-      <li>Request correction of inaccurate data</li>
-      <li>Request deletion of your data</li>
-      <li>Object to or restrict our processing of your data</li>
+      <li>The message you type.</li>
+      <li>Up to the last 12 messages of the current conversation, so the assistant can follow the thread.</li>
+      <li>Liturgical context for the day: the date, the saint or saints commemorated, the feast, and the fasting rule — plus your chosen language, so it replies in Greek or English.</li>
+      <li><strong>Only if your message mentions birthdays, namedays or celebrations:</strong> the names and dates of your next few upcoming contact celebrations (at most three, within the next 30 days). This is what lets the assistant answer "whose nameday is coming up?".</li>
     </ul>
-    <p>To exercise any of these rights, please contact us at the email below.</p>
+    <div class="note-box">
+      <strong>Your contacts' phone numbers and notes are never sent to Google.</strong> Neither is your own name, birthday or nameday — the assistant is explicitly told it does not know them. Contact names are only included when your message is actually about celebrations; otherwise no contact data is sent at all.
+    </div>
+    <p>Google states that content sent through the paid Gemini API is not used to train its models. That commitment is Google's rather than ours and is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's terms and privacy policy</a>.</p>
 
-    <h2>8. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the "Last updated" date at the top of this page. Your continued use of the App after any changes constitutes your acceptance of the new Privacy Policy.</p>
+    <h3>Chat history</h3>
+    <p>Your messages and the assistant's replies are stored in your account so that the conversation survives closing the App and can be reviewed later from the chat history. Only you can read your own conversations.</p>
+    <ul>
+      <li><strong>You can delete the whole history yourself at any time</strong> using the delete button in the AI Assistant. This permanently removes the messages from our database, not just from your screen.</li>
+      <li>Messages are automatically deleted after <strong>90 days</strong>. To be precise about how this works: the clean-up runs when you next send a message, so if you stop using the assistant entirely, older messages may remain until you use it again or delete your account.</li>
+    </ul>
 
-    <h2>9. Disclaimer</h2>
+    <h2>7. Crisis Support</h2>
+    <p>If a message you write to the AI Assistant suggests you may be thinking about suicide or self-harm, the App shows a card with crisis helpline numbers, and the assistant is instructed to respond with care rather than change the subject.</p>
+    <ul>
+      <li><strong>The check happens entirely on your device.</strong> Your message is compared against a built-in list of phrases inside the App. The result of that check is never sent to us, to Google, or to anyone else, and it is never stored.</li>
+      <li><strong>Which helplines you see is chosen from your device's time zone</strong>, because that is the best available signal for where you actually are. We do not use GPS or look up your location from your IP address, and there is no country setting to store.</li>
+      <li>Tapping a number opens your phone's dialler. The call itself is between you and that service — we are not part of it and are not told that you called.</li>
+      <li>The "find a helpline" button opens <a href="https://findahelpline.com/" target="_blank" rel="noopener">findahelpline.com</a> in your browser. Only a two-letter country code is included in the address; nothing you wrote is shared with them.</li>
+    </ul>
+    <p>Please note that the message itself is still sent to Google as part of the ordinary AI conversation described in section 6, and is stored in your chat history like any other message — you can delete it at any time.</p>
+    <p><strong>OrthoCalendar is not a crisis service.</strong> If you are in immediate danger, please call your local emergency number.</p>
+
+    <h2>8. Information Stored on Your Device</h2>
+    <p>So the App keeps working without an internet connection, some information is saved on your phone itself:</p>
+    <ul>
+      <li><strong>A copy of your contacts</strong>, including their names, birthdays, namedays, phone numbers and notes, saved as a file in the App's private storage area.</li>
+      <li><strong>A copy of your profile settings</strong>, including your display name, language and calendar preference.</li>
+      <li><strong>The liturgical calendar</strong> — saints, feasts and fasting rules. This contains no personal information.</li>
+      <li>The last few days of daily reflections, and small settings such as your chosen notification time.</li>
+    </ul>
+    <p>This information is held in the App's private storage, which other apps on your device cannot read. It is <strong>excluded from Android cloud backup and from device-to-device transfer</strong>, so it is not copied off your phone by those features.</p>
+    <p><strong>Signing out or deleting your account erases the contact and profile copies from your device.</strong> Uninstalling the App also removes them.</p>
+
+    <h2>9. Data Storage, Location and Security</h2>
+    <p>Your account data is stored with <strong>Supabase</strong>, which encrypts data in transit and at rest. Connections between the App and our backend are encrypted, and the App refuses unencrypted connections to our services.</p>
+    <p>Depending on the region our backend is hosted in, your data may be processed inside or outside the European Economic Area. Our providers — Supabase, Google, RevenueCat and Brevo — operate internationally, and where personal data is transferred outside the EEA they rely on appropriate safeguards such as the European Commission's Standard Contractual Clauses. Links to each provider's own policy are in section 5.</p>
+    <p>We take reasonable measures to protect your information from unauthorised access, use or disclosure. However, no method of transmission over the internet or method of electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+
+    <h2>10. Data Retention and Account Deletion</h2>
+    <p>We keep your personal data only as long as your account is active, or as long as we need it to provide the service:</p>
+    <ul>
+      <li><strong>Account, profile and contacts</strong> — kept until you delete your account.</li>
+      <li><strong>AI chat messages</strong> — deleted after 90 days, or immediately when you clear your chat history, with the caveat described in section 6.</li>
+      <li><strong>Copies on your device</strong> — removed when you sign out, delete your account, or uninstall the App.</li>
+    </ul>
+    <h3>Deleting your account</h3>
+    <ul>
+      <li><strong>In the App:</strong> go to <em>Profile → Delete Account</em>. This permanently deletes your account and the data associated with it, and cannot be undone.</li>
+      <li><strong>By email:</strong> if you have already uninstalled the App or cannot sign in, write to <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a> and we will delete your data within 30 days, except where the law requires us to keep something.</li>
+    </ul>
+    <div class="note-box">
+      <strong>What deleting your account does not remove.</strong> Your purchase record stays with Google Play and with RevenueCat, because it is a record of a transaction rather than something we control, and deleting your account does not cancel a paid subscription — cancel that in your Google Play account settings. Our email provider also keeps ordinary delivery logs for a period. Advertising data held by Google is governed by Google's own policies and controls.
+    </div>
+
+    <h2>11. Children's Privacy</h2>
+    <p>OrthoCalendar is not directed to children. <strong>You must be at least 16 years old to create an account.</strong> We do not knowingly collect personal information from children under 16. If you believe a child under 16 has given us personal information, please contact us at <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a> and we will delete it.</p>
+
+    <h2>12. Your Rights</h2>
+    <p>Depending on where you live, and in particular if you are in the European Economic Area or the UK, you have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> the personal information we hold about you</li>
+      <li><strong>Correct</strong> information that is inaccurate or incomplete</li>
+      <li><strong>Delete</strong> your data — you can do this yourself from <em>Profile → Delete Account</em></li>
+      <li><strong>Object to or restrict</strong> our processing of your data</li>
+      <li><strong>Receive a copy of your data</strong> in a portable, machine-readable format, and ask us to transfer it</li>
+      <li><strong>Withdraw your consent</strong> at any time, where we rely on consent — for advertising, from <em>Profile → Manage Privacy Settings</em></li>
+    </ul>
+    <p>To exercise any of these rights, write to <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a>. We will respond within one month.</p>
+    <p>You also have the right to complain to a data protection supervisory authority. In Cyprus this is the <a href="https://www.dataprotection.gov.cy/" target="_blank" rel="noopener">Office of the Commissioner for Personal Data Protection</a>; in Greece it is the <a href="https://www.dpa.gr/" target="_blank" rel="noopener">Hellenic Data Protection Authority</a>. If you live elsewhere in the EEA, you may complain to your own national authority.</p>
+
+    <h2>13. Data Breaches</h2>
+    <p>If a security breach affects your personal data and is likely to result in a risk to your rights and freedoms, we will notify the competent supervisory authority without undue delay and, where required, within 72 hours of becoming aware of it. Where the breach is likely to result in a high risk to you, we will also notify you directly, using the email address on your account.</p>
+
+    <h2>14. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the "Last updated" date at the top of this page. Your continued use of the App after any changes constitutes your acceptance of the new Privacy Policy. We encourage you to review this page from time to time.</p>
+
+    <h2>15. Disclaimer</h2>
     <p>OrthoCalendar is intended for reference purposes only. While we strive for accuracy, feast days, fasting rules, and saint information may contain errors or vary by local tradition. Always consult your priest or a trusted Orthodox source for canonical guidance.</p>
 
-    <h2>10. Contact Us</h2>
+    <h2>16. Contact Us</h2>
     <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-    <p><strong>Email:</strong> <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a></p>
+    <p><strong>KoraxFed</strong>, Cyprus<br />
+    <strong>Email:</strong> <a href="mailto:koraxfed@gmail.com">koraxfed@gmail.com</a></p>
     <p style="margin-top:2rem; font-style:italic; color:var(--muted); font-size:0.95rem;">OrthoCalendar is not affiliated with any official Orthodox Church body or organization.</p>
 
   </main>
